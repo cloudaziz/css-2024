@@ -52,7 +52,7 @@
       </p>
       <hr>
       <h3><code>ul li:has(+ li) {}</code></h3>
-      <ul>
+      <ul class="list">
          <li>Hello -1</li>
          <li>Hello -2</li>
          <li>Hello -3</li>
@@ -72,8 +72,18 @@
          Eius ullam soluta asperiores dolore iusto iure?</p>
       <p>Lorem ipsum dolor sit, amet <span>consectetur adipisicing elit</span>.
          Eius ullam soluta asperiores dolore iusto iure?</p>
+      <hr>
+      <h3><code>div:has(p:empty) {}</code></h3>
+      <p>If div has empty paragraph then style the div</p>
+      <ul class="sibling">
+         <li class="red">Item-1</li>
+         <li>Item-2</li>
+         <li>Item-3</li>
+         <li>Item-4</li>
+      </ul>
 
    </main>
+
 </body>
 
 </html>

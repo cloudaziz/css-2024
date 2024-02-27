@@ -48,7 +48,7 @@ p {
 main:has(h3) {
   border: 2px solid green;
 }
-ul li:has(+ li) {
+.list li:has(+ li) {
   border-bottom: 1px solid black;
 }
 p:not(:has(span)) {
@@ -58,4 +58,8 @@ p:not(:has(span)) {
 
 a:is(:hover, :focus) {
   color: red;
+}
+
+.sibling li.red + li {
+  background-color: green;
 }
