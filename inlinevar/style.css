@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 400px;
+  border: 2px solid red;
+  margin: 20px auto;
+  padding: 10px;
+}
+ul {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 20px;
+  justify-content: center;
+  gap: 10px;
+  & li {
+    background-color: var(--bg-color);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+}
