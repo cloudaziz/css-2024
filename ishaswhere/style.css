@@ -1,0 +1,61 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+hr {
+  margin-block: 10px;
+  border: 1px solid red;
+}
+
+/*
+Specificity
+! ........... id ........ class ....... tag
+0 ........... 0 ........... 0 .......... 1
+*/
+
+:where(main, header) {
+  width: 1000px;
+  margin-inline: auto;
+  background-color: rgb(228, 228, 228);
+  padding: 20px;
+}
+
+header:is(.my-header) {
+  border: 2px solid red;
+  margin-bottom: 20px;
+}
+
+/* header :is(h1, h2, p) {
+  color: red;
+  line-height: 1.7;
+} */
+/* header :is(.bold) {
+  font-weight: bold;
+} */
+:is(header, main) h3,
+p {
+  color: black;
+}
+
+:where(header, main) h3,
+p {
+  color: blue;
+}
+
+main:has(h3) {
+  border: 2px solid green;
+}
+ul li:has(+ li) {
+  border-bottom: 1px solid black;
+}
+p:not(:has(span)) {
+  color: green;
+  font-size: 18px;
+}
+
+a:is(:hover, :focus) {
+  color: red;
+}

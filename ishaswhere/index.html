@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <title>:is :where :has</title>
+</head>
+
+<body>
+   <header class="my-header">
+      <h3>
+         <code>header:is(.my-header, .blue, .green) {}</code>
+      </h3>
+      <p>
+         Parent teg selector not class or id, that means header if it has
+         <b>contain</b> the class my-header or blue or green then header will
+         be...<br><b>example: see style sheet</b>
+      </p>
+      <hr>
+      <h3>
+         <code>header :is(h1, h2, h3, .bold) {}</code>
+      </h3>
+      <p class="bold">
+         Child teg or class selector that means header if it has <b>inner</b>
+         the class bold or tag h1 or h2 or h3 then header will be...
+         <br><b>example: see style sheet</b>
+      </p>
+      <hr>
+      <h3><code>:is(header, main) h3, p {}</code>
+      </h3>
+      <p class="bold">Also you can use...<br><b>example: see style sheet</b>
+      </p>
+      <hr>
+      <h3><code>a:is(:hover, :focus) {}</code></h3>
+      <p>styling hover & focus</p>
+      <hr>
+      <h3>
+         <code>:where(header, main) h3, p {}</code>
+      </h3>
+      <p class="bold">
+         <code>:where</code> & <code>:is</code> is same, only difference between
+         Specificity, <br><b>example: see style sheet</b>
+      </p>
+   </header>
+   <main class="my-main">
+      <h3><code>main:has(h3) {}</code></h3>
+      <p>
+         Parent selector. Any &lt;main&gt; that has h3 inside of it then style
+         &lt;main&gt; <br><b>example: see style sheet</b>
+      </p>
+      <hr>
+      <h3><code>ul li:has(+ li) {}</code></h3>
+      <ul>
+         <li>Hello -1</li>
+         <li>Hello -2</li>
+         <li>Hello -3</li>
+         <li>Hello -4</li>
+      </ul>
+      <p>
+         Every li has border-bottom without last li
+      </p>
+      <hr>
+      <h3><code>p:not(:has(span)) {}</code></h3>
+      <p>That Means Every Paragraph does not have a &lt;span&gt; inside of it
+         those are styled
+      </p>
+      <p>Lorem ipsum dolor sit, amet <span>consectetur adipisicing elit</span>.
+         Eius ullam soluta asperiores dolore iusto iure?</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+         Eius ullam soluta asperiores dolore iusto iure?</p>
+      <p>Lorem ipsum dolor sit, amet <span>consectetur adipisicing elit</span>.
+         Eius ullam soluta asperiores dolore iusto iure?</p>
+
+   </main>
+</body>
+
+</html>
