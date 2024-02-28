@@ -9,6 +9,9 @@ hr {
   margin-block: 10px;
   border: 1px solid red;
 }
+ul {
+  list-style: none;
+}
 
 /*
 Specificity
@@ -16,13 +19,15 @@ Specificity
 0 ........... 0 ........... 0 .......... 1
 */
 
-:where(main, header) {
+:where(header) {
   width: 1000px;
   margin-inline: auto;
-  background-color: rgb(228, 228, 228);
   padding: 20px;
 }
-
+:where(main) {
+  width: 1000px;
+  margin-inline: auto;
+}
 header:is(.my-header) {
   border: 2px solid red;
   margin-bottom: 20px;
@@ -60,6 +65,6 @@ a:is(:hover, :focus) {
   color: red;
 }
 
-.sibling li.red + li {
+.sibling li + li {
   background-color: green;
 }
