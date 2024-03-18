@@ -34,6 +34,11 @@
       <h3><code>a:is(:hover, :focus) {}</code></h3>
       <p>styling hover & focus</p>
       <hr>
+      <hr>
+      <h3><code>:is(header, .post-content) :is(h2,h3,a) {}</code></h3>
+      <p>h2,h3,a will be styled</p>
+      <hr>
+      <h3><code>:where(header, .post-content) :where(h2,h3,a) {}</code></h3>
       <h3>
          <code>:where(header, main) h3, p {}</code>
       </h3>
@@ -63,6 +68,15 @@
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius ullam soluta asperiores dolore iusto iure?</p>
       <p>Lorem ipsum dolor sit, amet <span>consectetur adipisicing elit</span>. Eius ullam soluta asperiores dolore
          iusto iure?</p>
+      <hr>
+      <h3><code>nav:has(a:hover) a:not(:hover) { opacity: 0.3}</code></h3>
+      <p>when hover nav item, other items will be dim</p>
+      <em>Example:</em>
+      <nav class="has-nav">
+         <a href="#">Home</a>
+         <a href="#">About</a>
+         <a href="#">Contact</a>
+      </nav>
       <hr>
       <h3><code>div:has(p:empty) {}</code></h3>
       <p>If div has empty paragraph then style the div</p>

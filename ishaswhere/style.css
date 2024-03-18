@@ -68,3 +68,18 @@ a:is(:hover, :focus) {
 .sibling li + li {
   background-color: green;
 }
+
+.has-nav a {
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: blueviolet;
+  transition: all 0.3s ease-in-out;
+}
+
+.has-nav a:hover {
+  color: #ff7a18;
+}
+.has-nav:has(a:hover) a:not(:hover) {
+  opacity: 0.3;
+}
