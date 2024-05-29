@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 300px;
+  margin: 20px auto;
+  border: 1px solid red;
+  overflow: hidden;
+}
+.logos {
+  --content-gap: 40px;
+  background-color: yellow;
+  padding-block: 8px;
+
+  display: flex;
+
+  gap: var(--content-gap);
+}
+
+.logos-slide {
+  flex: 0 0 100%;
+  white-space: nowrap;
+  animation: infinitslide 9s linear infinite;
+}
+
+@keyframes infinitslide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--content-gap)));
+  }
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
