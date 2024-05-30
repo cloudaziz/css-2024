@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 .container {
-  width: 300px;
+  width: 1000px;
   margin: 20px auto;
   border: 1px solid red;
-  overflow: hidden;
 }
+
 .logos {
   --content-gap: 40px;
   background-color: yellow;
@@ -16,21 +16,29 @@
 
   display: flex;
 
+  overflow: hidden;
   gap: var(--content-gap);
 }
 
 .logos-slide {
   flex: 0 0 100%;
   white-space: nowrap;
-  animation: infinitslide 9s linear infinite;
+  animation: infinitslide-ltr 9s linear infinite;
 }
 
-@keyframes infinitslide {
-  from {
-    transform: translateX(0);
-  }
+[dir='rtl'] .logos-slide {
+  animation: infinitslide-rtl 9s linear infinite;
+}
+
+@keyframes infinitslide-ltr {
   to {
     transform: translateX(calc(-100% - var(--content-gap)));
+  }
+}
+
+@keyframes infinitslide-rtl {
+  to {
+    transform: translateX(calc(100% + var(--content-gap)));
   }
 }
 
