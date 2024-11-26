@@ -1,0 +1,19 @@
+form ul {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 24px;
+}
+
+@supports (grid-template-columns: subgrid) {
+  form ul li {
+    grid-column: 1 /-1;
+    display: grid;
+    grid-template-columns: subgrid;
+    /* display: contents; */
+  }
+}
+@supports not (grid-template-columns: subgrid) {
+  form ul li {
+    display: contents;
+  }
+}
