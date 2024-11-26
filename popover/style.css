@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 800px;
+  height: 400px;
+  margin-inline: auto;
+  border: 1px solid red;
+  display: grid;
+  place-items: center;
+}
+
+.anchor {
+  padding: 30px;
+  border: 1px solid green;
+  anchor-name: --over-easy;
+}
+.positioned-element {
+  padding: 15px;
+  background-color: green;
+  position: absolute;
+  position-anchor: --over-easy;
+  bottom: anchor(top);
+  margin-bottom: 10px;
+  /* justify-self: anchor-center; */
+  transform: 1s all;
+
+  width: 100px;
+}
+
+/* Animating the popover in */
+
+/*   IS-OPEN STATE   */
+[popover]:popover-open {
+  opacity: 1;
+  transition: opacity 1s, display 1s allow-discrete;
+}
+
+/*   EXIT STATE   */
+[popover] {
+  inset: unset;
+  bottom: anchor(top);
+  left: anchor(center);
+  translate: -50%;
+  opacity: 0;
+  transition: opacity 1s, display 1s allow-discrete;
+}
+
+/*   0. BEFORE-OPEN STATE   */
+@starting-style {
+  [popover]:popover-open {
+    opacity: 0;
+  }
+}
