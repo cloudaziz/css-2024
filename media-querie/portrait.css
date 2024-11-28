@@ -1,0 +1,11 @@
+@media (orientation: portrait) {
+    body{
+      background-color: green;
+   }
+}
+
+h1 {
+   writing-mode: vertical-lr;
+   font-size: 3rem;
+   text-decoration-line: overline;
+}
