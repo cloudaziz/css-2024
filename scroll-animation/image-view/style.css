@@ -1,0 +1,25 @@
+main {
+  max-width: 600px;
+  margin-inline: auto;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(45% 20% 45% 20%);
+  }
+  50% {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+.revealing-image {
+  /* animation: reveal 1s linear forwards; */
+  animation: reveal linear forwards;
+  animation-timeline: view();
+}
