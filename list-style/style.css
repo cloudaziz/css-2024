@@ -35,7 +35,7 @@ ul.second {
   li {
     display: grid;
     grid-template-columns: 0 1fr;
-    gap: 1.75em;
+    gap: 1.5em;
     align-items: start;
     font-size: 1.5rem;
     line-height: 1.25;
@@ -44,6 +44,6 @@ ul.second {
     content: attr(data-icon);
     /* Make slightly larger than the li font-size
   but smaller than the li gap */
-    font-size: 1.25em;
+    font-size: 1em;
   }
 }
