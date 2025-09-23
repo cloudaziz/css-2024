@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+main {
+  padding: 0 3rem;
+  position: relative;
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+main *:last-child {
+  margin-bottom: 0;
+}
+
+.back-to-top-wrapper {
+  position: absolute;
+  top: 100vh;
+  right: 0.25rem;
+  bottom: -5em;
+  width: 3em;
+  pointer-events: none;
+}
+
+.back-to-top-link {
+  position: sticky;
+  pointer-events: all;
+  top: calc(100vh - 5rem);
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0.25rem;
+  border: 1px solid #254568;
+  background-color: #d6e3f0;
+  transition: transform 0.2s ease-in;
+}
+.back-to-top-link:hover,
+.back-to-top-link:focus {
+  transform: scale(1.1);
+}
+.back-to-top-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #4e85c0;
+}
+
+body {
+  font-family: 'Baloo 2', sans-serif;
+  min-height: 100vh;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  margin: 0;
+}
+
+header,
+footer {
+  display: grid;
+  place-items: center;
+  background-color: #254568;
+  color: #fff;
+}
+
+header {
+  background-color: #254568;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
