@@ -22,9 +22,29 @@
   padding: 20px 0;
   background-color: rgb(0, 0, 0);
   position: relative;
-  /* isolation: isolate; */
+  isolation: isolate;
 }
-.logos::before,
+.logos::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  --_blur-size: 150px;
+  --_transparent-start: 20%;
+  --_transparent-end: calc(100% - var(--_transparent-start));
+
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    red 0% calc(var(--_transparent-start) - var(--_blur-size)),
+    transparent var(--_transparent-start) var(--_transparent-end),
+    red calc(var(--_transparent-end) + var(--_blur-size)) 100%
+  );
+  z-index: 1;
+}
+
+/* .logos::before,
 .logos::after {
   position: absolute;
   top: 0;
@@ -50,7 +70,7 @@
     rgba(255, 255, 255, 0) 0%,
     rgba(0, 0, 0, 1) 90%
   );
-}
+} */
 
 .logos:hover .logos-slide {
   animation-play-state: paused;
