@@ -130,16 +130,16 @@ tooltipCircles.forEach((tooltipCircle) => {
 // ========================== Animation Start =================
 // const rootSvg = r.querySelector('#interactive-swatch-hero');
 const myCursor = r.querySelector('#my-cursor');
-const motionPathOne = r.getElementById('cursor-position-1');
-const motionPathTwo = r.getElementById('cursor-position-2');
-const motionPathThree = r.getElementById('cursor-position-3');
-const motionPathFour = r.getElementById('cursor-position-4');
-const motionPathFive = r.getElementById('cursor-position-5');
-const motionPathSix = r.getElementById('cursor-position-6');
-const motionPathSeven = r.getElementById('cursor-position-7');
-const motionPathEight = r.getElementById('cursor-position-8');
-const motionPathNine = r.getElementById('cursor-position-9');
-const motionPathTen = r.getElementById('cursor-position-10');
+const motionPathOne = r.getElementById('cursorPositionOne');
+const motionPathTwo = r.getElementById('cursorPositionTwo');
+const motionPathThree = r.getElementById('cursorPositionThree');
+const motionPathFour = r.getElementById('cursorPositionFour');
+const motionPathFive = r.getElementById('cursorPositionFive');
+const motionPathSix = r.getElementById('cursorPositionSix');
+const motionPathSeven = r.getElementById('cursorPositionSeven');
+const motionPathEight = r.getElementById('cursorPositionEight');
+const motionPathNine = r.getElementById('cursorPositionNine');
+const motionPathTen = r.getElementById('cursorPositionTen');
 const actionTiming = 500;
 
 motionPathOne.addEventListener('endEvent', (event) => {
@@ -214,10 +214,6 @@ motionPathTen.addEventListener('endEvent', (event) => {
   myCursor.classList.add('active');
   setTimeout(() => {
     circleShoeSolids[1].dispatchEvent(new Event('click'));
-  }, actionTiming);
-
-  setTimeout(() => {
-    motionPathOne.beginElement();
   }, actionTiming);
 });
 

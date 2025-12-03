@@ -12,7 +12,7 @@
    <div class="container" style="max-width: 900px; margin-inline: auto;">
 
       <svg id="interactive-swatch-hero" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" fill="none">
-         <g id="swatch-hero">
+         <g>
 
             <g id="BG">
                <g id="Ellipse 7" filter="url(#filter0_d_1497_1148)">
@@ -465,20 +465,38 @@
 
 
 
+               <animateMotion id="cursorPositionOne" calcMode="linear" begin="0s;cursorPositionTen.end+1s" dur="1s" fill="freeze" path="M507.5 397.5C434 296 308.736 263.2 100 228" />
+
+               <animateMotion id="cursorPositionTwo" calcMode="linear" begin="cursorPositionOne.end+1s" dur=".3s" fill="freeze" path="M100.5 228C115.5 219.5 127.5 215.5 143 228" />
+
+
+               <animateMotion id="cursorPositionThree" calcMode="linear" begin="cursorPositionTwo.end+1s" dur="1s" fill="freeze" path="M143 228C322.988 95.7663 437.308 70.365 665 114.5" />
+
+               <animateMotion id="cursorPositionFour" calcMode="linear" begin="cursorPositionThree.end+1s" dur=".5s" fill="freeze" path="M665 114.5C733.72 67.8416 767.89 72.626 827 114.5" />
+
+               <animateMotion id="cursorPositionFive" calcMode="linear" begin="cursorPositionFour.end+1s" dur="1s" fill="freeze" path="M826 115C670.639 260.171 676.647 344.782 797.5 504.5" />
+
+               <animateMotion id="cursorPositionSix" calcMode="linear" begin="cursorPositionFive.end+1s" dur=".4s" fill="freeze" path="M797.5 504.5C768.796 488.896 752.704 489.561 724 506" />
+
+               <animateMotion id="cursorPositionSeven" calcMode="linear" begin="cursorPositionSix.end+1s" dur="1s" fill="freeze" path="M724 506C562.878 624.822 461.513 653.597 244 635" />
+
+               <animateMotion id="cursorPositionEight" calcMode="linear" begin="cursorPositionSeven.end+1s" dur=".4s" fill="freeze" path="M244 635C184.644 605.615 150.363 603.263 91 635" />
+
+               <animateMotion id="cursorPositionNine" calcMode="linear" begin="cursorPositionEight.end+1s" dur="1s" fill="freeze" path="M91 635C118.84 539.526 513.889 416.478 602 398" />
+
+               <animateMotion id="cursorPositionTen" calcMode="linear" begin="cursorPositionNine.end+1s" dur=".5s" fill="freeze" path="M602 397.5C588 369 532.5 362 508 397.5" />
+
+
+
+
             </g>
             <!-- Animation Area -->
-            <g id="motion-animation-group">
-               <animateMotion id="cursor-position-1" xlink:href="#my-cursor" calcMode="linear" begin="0s" dur="1s" fill="freeze" path="M507.5 397.5C434 296 308.736 263.2 100 228" />
-               <animateMotion id="cursor-position-2" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-1.end+1s" dur="1s" fill="freeze" path="M100.5 228C115.5 219.5 127.5 215.5 143 228" />
-               <animateMotion id="cursor-position-3" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-2.end+1s" dur="1s" fill="freeze" path="M143 228C322.988 95.7663 437.308 70.365 665 114.5" />
-               <animateMotion id="cursor-position-4" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-3.end+1s" dur="1s" fill="freeze" path="M665 114.5C733.72 67.8416 767.89 72.626 827 114.5" />
-               <animateMotion id="cursor-position-5" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-4.end+1s" dur="1s" fill="freeze" path="M826 115C670.639 260.171 676.647 344.782 797.5 504.5" />
-               <animateMotion id="cursor-position-6" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-5.end+1s" dur="1s" fill="freeze" path="M797.5 504.5C768.796 488.896 752.704 489.561 724 506" />
-               <animateMotion id="cursor-position-7" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-6.end+1s" dur="1s" fill="freeze" path="M724 506C562.878 624.822 461.513 653.597 244 635" />
-               <animateMotion id="cursor-position-8" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-7.end+1s" dur="1s" fill="freeze" path="M244 635C184.644 605.615 150.363 603.263 91 635" />
-               <animateMotion id="cursor-position-9" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-8.end+1s" dur="1s" fill="freeze" path="M91 635C118.84 539.526 513.889 416.478 602 398" />
-               <animateMotion id="cursor-position-10" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-9.end+1s" dur="1s" fill="freeze" path="M602 397.5C588 369 532.5 362 508 397.5" />
-            </g>
+            <!-- <g id="motion-animation-group"> -->
+            <!-- <animateMotion id="cursor-position-1" xlink:href="#my-cursor" calcMode="linear" begin="0s;cursor-position-10.end" dur="1s" fill="freeze" path="M507.5 397.5C434 296 308.736 263.2 100 228" />
+               <animateMotion id="cursor-position-2" xlink:href="#my-cursor" calcMode="linear" begin="cursor-position-1.end+1s" dur="1s" fill="freeze" path="M100.5 228C115.5 219.5 127.5 215.5 143 228" /> -->
+
+
+            <!-- </g> -->
          </g>
 
          <defs>
