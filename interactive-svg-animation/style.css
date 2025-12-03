@@ -1,0 +1,222 @@
+#interactive-swatch-hero {
+  --shoe-color: #e5e7eb;
+  --sofa-color: #cfd4db;
+  --watch-color: #fdced2;
+}
+
+.sofahand {
+  fill: var(--sofa-color);
+}
+
+.sofaback {
+  fill: hsl(from var(--sofa-color) h s l / 30%);
+}
+
+.sofabottom {
+  fill: hsl(from var(--sofa-color) h s l / 60%);
+}
+
+.watch-dial {
+  fill: var(--watch-color);
+}
+
+.watch-belt {
+  fill: hsl(from var(--watch-color) h s l / 30%);
+}
+
+.shoe-color {
+  fill: var(--shoe-color);
+}
+
+.sofa-circle-group {
+  .circle-sofa-border {
+    fill: #374ea1;
+    opacity: 0.4;
+  }
+
+  &.active {
+    .circle-sofa-border {
+      opacity: 1;
+    }
+  }
+}
+
+/* Shoe card Start */
+
+.circle-shoe-solid {
+  .cicle-shoe-border {
+    stroke: #374ea1;
+    stroke-width: 1.5;
+    stroke-opacity: 0.4;
+  }
+
+  .check {
+    display: none;
+    fill: none;
+  }
+
+  &.active {
+    .cicle-shoe-border {
+      stroke-opacity: 1;
+    }
+
+    .check {
+      display: block;
+    }
+  }
+}
+
+.shoe-number {
+  cursor: pointer;
+
+  .shoe-number-border {
+    fill: #fff;
+    stroke: #374ea1;
+    stroke-opacity: 0.1;
+  }
+
+  text {
+    white-space: pre;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    fill: #374ea1;
+    fill-opacity: 0.3;
+  }
+
+  &.active {
+    .shoe-number-border {
+      stroke-opacity: 1;
+      fill-opacity: 0.3;
+    }
+
+    text {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.circle-filter {
+  cursor: pointer;
+
+  .circle-number {
+    stroke: #374ea1;
+    stroke-width: 0.5;
+    stroke-opacity: 0.4;
+  }
+
+  &.active {
+    .circle-number {
+      stroke: #374ea1;
+      stroke-width: 1;
+      stroke-opacity: 1;
+    }
+  }
+}
+
+.filter-solid-border {
+  cursor: pointer;
+  stroke: #fff;
+  stroke-width: 1;
+
+  &.active {
+    stroke: #374ea1;
+    stroke-width: 2;
+  }
+}
+
+.tooltip-circle {
+  .circle-border {
+    fill: #fff;
+    stroke: #374ea1;
+    stroke-opacity: 0.2;
+  }
+
+  &.active {
+    .circle-border {
+      stroke-opacity: 1;
+    }
+  }
+}
+
+.tooltip {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+:where(
+    .sofa-button,
+    .tooltip-button,
+    .tooltip-circle,
+    .circle-shoe-solid,
+    .sofa-circle-group
+  ) {
+  fill: #fff;
+  cursor: pointer;
+}
+
+:where(.circle-group-dual, .circle-group-solid) {
+  cursor: pointer;
+
+  .circle-dual-border {
+    fill: #fff;
+    stroke: #374ea1;
+    stroke-opacity: 0.2;
+  }
+
+  &.active {
+    .circle-dual-border {
+      stroke-opacity: 1;
+    }
+  }
+}
+
+#my-cursor {
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+
+  #hand-cursor {
+    display: none;
+  }
+
+  &.active {
+    #hand-cursor {
+      display: block;
+    }
+
+    #hand {
+      animation-name: handScale;
+      animation-duration: 0.1s;
+      animation-timing-function: ease;
+      animation-delay: 0.3s;
+      animation-iteration-count: 1;
+    }
+
+    #blinking {
+      animation-name: draw;
+      animation-duration: 0.2s;
+      animation-timing-function: ease;
+      animation-delay: 0.4s;
+    }
+
+    #main-cursor {
+      display: none;
+    }
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke: transparent;
+    stroke-width: 6px;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes handScale {
+  to {
+    transform: scale(0.9);
+  }
+}
