@@ -1,33 +1,33 @@
 const r = document.querySelector('#interactive-swatch-hero');
 
 // =========================== Sofa Card Variable ======================
-let sofaCircleGroups = document.querySelectorAll('.sofa-circle-group');
-const sofaPrice = document.querySelector('.sofa-price');
-const sofaBtn = document.querySelector('.sofa-btn');
+let sofaCircleGroups = r.querySelectorAll('.sofa-circle-group');
+const sofaPrice = r.querySelector('.sofa-price');
+const sofaBtn = r.querySelector('.sofa-btn');
 
 // =========================== Dual Color Card Variable ======================
-const circleSolidAndDualColors = document.querySelectorAll(
+const circleSolidAndDualColors = r.querySelectorAll(
   '.circle-group-dual, .circle-group-solid'
 );
-const dualColorName = document.querySelector('.dual-color-name');
+const dualColorName = r.querySelector('.dual-color-name');
 
 // =========================== Shoe Card Variable ======================
-const circleShoeSolids = document.querySelectorAll('.circle-shoe-solid');
-const shoeNumbers = document.querySelectorAll('.shoe-number');
-const shoePrice = document.querySelector('.shoe-price');
-const shoeColor = document.querySelector('.shoe-color');
+const circleShoeSolids = r.querySelectorAll('.circle-shoe-solid');
+const shoeNumbers = r.querySelectorAll('.shoe-number');
+const shoePrice = r.querySelector('.shoe-price');
+const shoeColor = r.querySelector('.shoe-color');
 
 // ===========================Filter Card Variable ======================
-const filterSolidBorders = document.querySelectorAll('.filter-solid-border');
-const circleFilters = document.querySelectorAll('.circle-filter');
+const filterSolidBorders = r.querySelectorAll('.filter-solid-border');
+const circleFilters = r.querySelectorAll('.circle-filter');
 
 // ================== Watch Card Variable================================ */
-const tooltipCircles = document.querySelectorAll('.tooltip-circle');
-const toolTips = document.querySelectorAll('.tooltip');
-const watchDial = document.querySelector('.watch-dial');
-const watchBelt = document.querySelector('.watch-belt');
-const watchPrice = document.querySelector('.watch-price');
-const tooltipButton = document.querySelector('.tooltip-button text');
+const tooltipCircles = r.querySelectorAll('.tooltip-circle');
+const toolTips = r.querySelectorAll('.tooltip');
+const watchDial = r.querySelector('.watch-dial');
+const watchBelt = r.querySelector('.watch-belt');
+const watchPrice = r.querySelector('.watch-price');
+const tooltipButton = r.querySelector('.tooltip-button text');
 
 // =========================== Sofa Card ======================
 
@@ -128,18 +128,18 @@ tooltipCircles.forEach((tooltipCircle) => {
 });
 
 // ========================== Animation Start =================
-const rootSvg = document.querySelector('#interactive-swatch-hero');
-const myCursor = document.querySelector('#my-cursor');
-const motionPathOne = document.getElementById('cursor-position-1');
-const motionPathTwo = document.getElementById('cursor-position-2');
-const motionPathThree = document.getElementById('cursor-position-3');
-const motionPathFour = document.getElementById('cursor-position-4');
-const motionPathFive = document.getElementById('cursor-position-5');
-const motionPathSix = document.getElementById('cursor-position-6');
-const motionPathSeven = document.getElementById('cursor-position-7');
-const motionPathEight = document.getElementById('cursor-position-8');
-const motionPathNine = document.getElementById('cursor-position-9');
-const motionPathTen = document.getElementById('cursor-position-10');
+// const rootSvg = r.querySelector('#interactive-swatch-hero');
+const myCursor = r.querySelector('#my-cursor');
+const motionPathOne = r.getElementById('cursor-position-1');
+const motionPathTwo = r.getElementById('cursor-position-2');
+const motionPathThree = r.getElementById('cursor-position-3');
+const motionPathFour = r.getElementById('cursor-position-4');
+const motionPathFive = r.getElementById('cursor-position-5');
+const motionPathSix = r.getElementById('cursor-position-6');
+const motionPathSeven = r.getElementById('cursor-position-7');
+const motionPathEight = r.getElementById('cursor-position-8');
+const motionPathNine = r.getElementById('cursor-position-9');
+const motionPathTen = r.getElementById('cursor-position-10');
 const actionTiming = 500;
 
 motionPathOne.addEventListener('endEvent', (event) => {
@@ -221,14 +221,6 @@ motionPathTen.addEventListener('endEvent', (event) => {
   }, actionTiming);
 });
 
-// motionPathTen.addEventListener('endEvent', (event) => {
-//    myCursor.classList.add('active');
-//    setTimeout(() => {
-//       motionPathOne.beginElement()
-
-//    }, 500);
-// });
-
 // ============================= Change Cursor ======================
 motionPathOne.addEventListener('beginEvent', (event) => {
   myCursor.classList.remove('active');
@@ -263,11 +255,11 @@ motionPathTen.addEventListener('beginEvent', (event) => {
   myCursor.classList.remove('active');
 });
 
-rootSvg.addEventListener('mouseenter', (e) => {
-  rootSvg.pauseAnimations();
+r.addEventListener('mouseenter', (e) => {
+  r.pauseAnimations();
   myCursor.style.display = 'none';
 });
-rootSvg.addEventListener('mouseleave', (e) => {
+r.addEventListener('mouseleave', (e) => {
   myCursor.style.display = 'block';
-  rootSvg.unpauseAnimations();
+  r.unpauseAnimations();
 });
