@@ -209,9 +209,7 @@
 
 @keyframes draw {
   to {
-    stroke: transparent;
-    stroke-width: 6px;
-    transform: scale(1.2);
+    stroke-width: 2px;
   }
 }
 
