@@ -218,38 +218,28 @@ motionPathTen.addEventListener('endEvent', (event) => {
 });
 
 // ============================= Change Cursor ======================
-motionPathOne.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
+
+// Updated Shorter and cleaner code Start
+const motionPaths = [
+  motionPathOne,
+  motionPathTwo,
+  motionPathThree,
+  motionPathThree,
+  motionPathFive,
+  motionPathSix,
+  motionPathSeven,
+  motionPathEight,
+  motionPathNine,
+  motionPathTen,
+];
+
+motionPaths.forEach((motionPath) => {
+  motionPath.addEventListener('beginEvent', () => {
+    myCursor.classList.remove('active');
+  });
 });
 
-motionPathTwo.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
-
-motionPathThree.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
-motionPathFour.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
-motionPathFive.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
-motionPathSix.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
-motionPathSeven.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
-motionPathEight.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
-motionPathNine.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
-motionPathTen.addEventListener('beginEvent', (event) => {
-  myCursor.classList.remove('active');
-});
+// Shorter and cleaner code End
 
 r.addEventListener('mouseenter', (e) => {
   r.pauseAnimations();
