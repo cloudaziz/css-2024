@@ -140,7 +140,7 @@ const motionPathSeven = r.getElementById('cursorPositionSeven');
 const motionPathEight = r.getElementById('cursorPositionEight');
 const motionPathNine = r.getElementById('cursorPositionNine');
 const motionPathTen = r.getElementById('cursorPositionTen');
-const actionTiming = 500;
+const actionTiming = 1000;
 
 motionPathOne.addEventListener('endEvent', (event) => {
   myCursor.classList.add('active');
@@ -219,12 +219,11 @@ motionPathTen.addEventListener('endEvent', (event) => {
 
 // ============================= Change Cursor ======================
 
-// Updated Shorter and cleaner code Start
-const motionPaths = [
+const allMotionPaths = [
   motionPathOne,
   motionPathTwo,
   motionPathThree,
-  motionPathThree,
+  motionPathFour,
   motionPathFive,
   motionPathSix,
   motionPathSeven,
@@ -233,13 +232,11 @@ const motionPaths = [
   motionPathTen,
 ];
 
-motionPaths.forEach((motionPath) => {
-  motionPath.addEventListener('beginEvent', () => {
+allMotionPaths.forEach((path) => {
+  path.addEventListener('beginEvent', () => {
     myCursor.classList.remove('active');
   });
 });
-
-// Shorter and cleaner code End
 
 r.addEventListener('mouseenter', (e) => {
   r.pauseAnimations();
