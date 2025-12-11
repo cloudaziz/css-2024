@@ -143,130 +143,121 @@ const motionPathTen = r.getElementById('cursorPositionTen');
 const handCursor = r.getElementById('hand');
 const actionTiming = 1000;
 
-function triggerClickEvent(element) {
+motionPathOne.addEventListener('endEvent', (event) => {
   myCursor.classList.add('active');
-
   handCursor.addEventListener(
     'animationend',
     (event) => {
-      element.dispatchEvent(new Event('click'));
+      sofaCircleGroups[1].dispatchEvent(new Event('click'));
     },
-    {
-      signal: AbortSignal.timeout(500),
-    }
+    { signal: AbortSignal.timeout(500) }
   );
-}
-
-motionPathOne.addEventListener('endEvent', (event) => {
-  triggerClickEvent(sofaCircleGroups[1]);
-
-  // handCursor.addEventListener(
-  //   'animationend',
-  //   (event) => {
-  //     console.log('animation end 1');
-  //     sofaCircleGroups[1].dispatchEvent(new Event('click'));
-  //   },
-  //   {
-  //     signal: AbortSignal.timeout(500),
-  //   }
-  // );
-
-  // setTimeout(() => {}, actionTiming);
 });
 
 motionPathTwo.addEventListener('endEvent', (event) => {
-  triggerClickEvent(sofaCircleGroups[3]);
-
-  // handCursor.addEventListener(
-  //   'animationend',
-  //   (event) => {
-  //     console.log('animation end 2');
-  //     sofaCircleGroups[3].dispatchEvent(new Event('click'));
-  //   },
-  //   {
-  //     signal: AbortSignal.timeout(500),
-  //   }
-  // );
-
-  // setTimeout(() => {
-  //   sofaCircleGroups[3].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  myCursor.classList.add('active');
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      sofaCircleGroups[3].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
 });
 motionPathThree.addEventListener('endEvent', (event) => {
-  triggerClickEvent(filterSolidBorders[0]);
-
-  // setTimeout(() => {
-  //   filterSolidBorders[0].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  myCursor.classList.add('active');
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      filterSolidBorders[0].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
 });
 motionPathFour.addEventListener('endEvent', (event) => {
-  triggerClickEvent(filterSolidBorders[4]);
-
-  // setTimeout(() => {
-  //   filterSolidBorders[4].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  myCursor.classList.add('active');
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      filterSolidBorders[4].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
 });
 motionPathFive.addEventListener('endEvent', (event) => {
-  triggerClickEvent(tooltipCircles[2]);
+  myCursor.classList.add('active');
   tooltipCircles[2].dispatchEvent(new Event('mouseenter'));
-
-  // setTimeout(() => {
-  //   tooltipCircles[2].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      tooltipCircles[2].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
 });
 
-// SIX
 motionPathSix.addEventListener('beginEvent', (event) => {
   tooltipCircles[2].dispatchEvent(new Event('mouseleave'));
 });
 
 motionPathSix.addEventListener('endEvent', (event) => {
-  triggerClickEvent(tooltipCircles[0]);
-
-  // setTimeout(() => {
-  //   tooltipCircles[0].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  myCursor.classList.add('active');
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      tooltipCircles[0].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
   tooltipCircles[0].dispatchEvent(new Event('mouseenter'));
 });
 
-// Seven
 motionPathSeven.addEventListener('beginEvent', (event) => {
-  tooltipCircles[0].dispatchEvent(new Event('mouseleave'));
+  tooltipCircles[2].dispatchEvent(new Event('mouseleave'));
 });
+
 motionPathSeven.addEventListener('endEvent', (event) => {
-  // myCursor.classList.add('active');
-
-  triggerClickEvent(circleSolidAndDualColors[2]);
-
-  // setTimeout(() => {
-  //   circleSolidAndDualColors[2].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  myCursor.classList.add('active');
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      circleSolidAndDualColors[2].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
 });
 
 motionPathEight.addEventListener('endEvent', (event) => {
-  triggerClickEvent(circleSolidAndDualColors[4]);
-
-  // myCursor.classList.add('active');
-  // setTimeout(() => {
-  //   circleSolidAndDualColors[4].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  myCursor.classList.add('active');
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      circleSolidAndDualColors[4].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
 });
 
 motionPathNine.addEventListener('endEvent', (event) => {
-  triggerClickEvent(circleShoeSolids[4]);
-
-  // myCursor.classList.add('active');
-  // setTimeout(() => {
-  //   circleShoeSolids[4].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  myCursor.classList.add('active');
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      console.log('animation change cursor end! Path-9');
+      circleShoeSolids[4].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
 });
 motionPathTen.addEventListener('endEvent', (event) => {
-  triggerClickEvent(circleShoeSolids[1]);
-
-  // myCursor.classList.add('active');
-  // setTimeout(() => {
-  //   circleShoeSolids[1].dispatchEvent(new Event('click'));
-  // }, actionTiming);
+  myCursor.classList.add('active');
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      circleShoeSolids[1].dispatchEvent(new Event('click'));
+    },
+    { signal: AbortSignal.timeout(500) }
+  );
 });
 
 // ============================= Change Cursor ======================
@@ -289,7 +280,7 @@ allMotionPaths.forEach((path) => {
     myCursor.classList.remove('active');
   });
 });
-
+// ============================= End Change Cursor ======================
 r.addEventListener('mouseenter', (e) => {
   r.pauseAnimations();
   myCursor.style.display = 'none';
