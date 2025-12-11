@@ -140,81 +140,133 @@ const motionPathSeven = r.getElementById('cursorPositionSeven');
 const motionPathEight = r.getElementById('cursorPositionEight');
 const motionPathNine = r.getElementById('cursorPositionNine');
 const motionPathTen = r.getElementById('cursorPositionTen');
+const handCursor = r.getElementById('hand');
 const actionTiming = 1000;
 
-motionPathOne.addEventListener('endEvent', (event) => {
+function triggerClickEvent(element) {
   myCursor.classList.add('active');
-  setTimeout(() => {
-    sofaCircleGroups[1].dispatchEvent(new Event('click'));
-  }, actionTiming);
+
+  handCursor.addEventListener(
+    'animationend',
+    (event) => {
+      element.dispatchEvent(new Event('click'));
+    },
+    {
+      signal: AbortSignal.timeout(500),
+    }
+  );
+}
+
+motionPathOne.addEventListener('endEvent', (event) => {
+  triggerClickEvent(sofaCircleGroups[1]);
+
+  // handCursor.addEventListener(
+  //   'animationend',
+  //   (event) => {
+  //     console.log('animation end 1');
+  //     sofaCircleGroups[1].dispatchEvent(new Event('click'));
+  //   },
+  //   {
+  //     signal: AbortSignal.timeout(500),
+  //   }
+  // );
+
+  // setTimeout(() => {}, actionTiming);
 });
 
 motionPathTwo.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  setTimeout(() => {
-    sofaCircleGroups[3].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  triggerClickEvent(sofaCircleGroups[3]);
+
+  // handCursor.addEventListener(
+  //   'animationend',
+  //   (event) => {
+  //     console.log('animation end 2');
+  //     sofaCircleGroups[3].dispatchEvent(new Event('click'));
+  //   },
+  //   {
+  //     signal: AbortSignal.timeout(500),
+  //   }
+  // );
+
+  // setTimeout(() => {
+  //   sofaCircleGroups[3].dispatchEvent(new Event('click'));
+  // }, actionTiming);
 });
 motionPathThree.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  setTimeout(() => {
-    filterSolidBorders[0].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  triggerClickEvent(filterSolidBorders[0]);
+
+  // setTimeout(() => {
+  //   filterSolidBorders[0].dispatchEvent(new Event('click'));
+  // }, actionTiming);
 });
 motionPathFour.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  setTimeout(() => {
-    filterSolidBorders[4].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  triggerClickEvent(filterSolidBorders[4]);
+
+  // setTimeout(() => {
+  //   filterSolidBorders[4].dispatchEvent(new Event('click'));
+  // }, actionTiming);
 });
 motionPathFive.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
+  triggerClickEvent(tooltipCircles[2]);
   tooltipCircles[2].dispatchEvent(new Event('mouseenter'));
 
-  setTimeout(() => {
-    tooltipCircles[2].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  // setTimeout(() => {
+  //   tooltipCircles[2].dispatchEvent(new Event('click'));
+  // }, actionTiming);
 });
 
+// SIX
 motionPathSix.addEventListener('beginEvent', (event) => {
   tooltipCircles[2].dispatchEvent(new Event('mouseleave'));
 });
 
 motionPathSix.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  setTimeout(() => {
-    tooltipCircles[0].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  triggerClickEvent(tooltipCircles[0]);
+
+  // setTimeout(() => {
+  //   tooltipCircles[0].dispatchEvent(new Event('click'));
+  // }, actionTiming);
   tooltipCircles[0].dispatchEvent(new Event('mouseenter'));
 });
+
+// Seven
 motionPathSeven.addEventListener('beginEvent', (event) => {
-  tooltipCircles[2].dispatchEvent(new Event('mouseleave'));
+  tooltipCircles[0].dispatchEvent(new Event('mouseleave'));
 });
 motionPathSeven.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  setTimeout(() => {
-    circleSolidAndDualColors[2].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  // myCursor.classList.add('active');
+
+  triggerClickEvent(circleSolidAndDualColors[2]);
+
+  // setTimeout(() => {
+  //   circleSolidAndDualColors[2].dispatchEvent(new Event('click'));
+  // }, actionTiming);
 });
 
 motionPathEight.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  setTimeout(() => {
-    circleSolidAndDualColors[4].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  triggerClickEvent(circleSolidAndDualColors[4]);
+
+  // myCursor.classList.add('active');
+  // setTimeout(() => {
+  //   circleSolidAndDualColors[4].dispatchEvent(new Event('click'));
+  // }, actionTiming);
 });
 
 motionPathNine.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  setTimeout(() => {
-    circleShoeSolids[4].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  triggerClickEvent(circleShoeSolids[4]);
+
+  // myCursor.classList.add('active');
+  // setTimeout(() => {
+  //   circleShoeSolids[4].dispatchEvent(new Event('click'));
+  // }, actionTiming);
 });
 motionPathTen.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  setTimeout(() => {
-    circleShoeSolids[1].dispatchEvent(new Event('click'));
-  }, actionTiming);
+  triggerClickEvent(circleShoeSolids[1]);
+
+  // myCursor.classList.add('active');
+  // setTimeout(() => {
+  //   circleShoeSolids[1].dispatchEvent(new Event('click'));
+  // }, actionTiming);
 });
 
 // ============================= Change Cursor ======================

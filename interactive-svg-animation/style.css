@@ -188,24 +188,17 @@
 
     #hand {
       animation-name: handScale;
-      animation-duration: 1s;
+      animation-duration: 0.1s;
       animation-timing-function: ease;
       animation-delay: 0.2s;
       animation-iteration-count: 1;
     }
 
     #blinking {
-      animation-name: circleBig;
-      animation-duration: 1s;
+      animation-name: circleBigBlinking;
+      animation-duration: 0.5s;
       animation-timing-function: ease-in-out;
-      animation-delay: 0.5s;
-      animation-iteration-count: 1;
-    }
-    #blinkingSmall {
-      animation-name: circleBig;
-      animation-duration: 1s;
-      animation-timing-function: ease-in-out;
-      animation-delay: 0.4s;
+      animation-delay: 0.2s;
       animation-iteration-count: 1;
     }
 
@@ -214,12 +207,14 @@
     }
   }
 }
+/* Key Frames Animation */
+@keyframes handScale {
+  to {
+    transform: scale(0.9);
+  }
+}
 
-/* #blinkingSmall {
-  animation: circleBig 1s ease-in-out 0.3s infinite;
-} */
-
-@keyframes circleBig {
+@keyframes circleBigBlinking {
   0% {
     r: 1;
     stroke-width: 0;
@@ -234,16 +229,5 @@
     r: 60;
     stroke-width: 3;
     stroke-opacity: 0;
-  }
-}
-/* @keyframes draw {
-  to {
-    stroke-width: 2px;
-  }
-} */
-
-@keyframes handScale {
-  to {
-    transform: scale(0.9);
   }
 }
