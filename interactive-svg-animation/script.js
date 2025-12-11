@@ -141,59 +141,38 @@ const motionPathEight = r.getElementById('cursorPositionEight');
 const motionPathNine = r.getElementById('cursorPositionNine');
 const motionPathTen = r.getElementById('cursorPositionTen');
 const handCursor = r.getElementById('hand');
-const actionTiming = 1000;
+const actionTiming = 500;
 
-motionPathOne.addEventListener('endEvent', (event) => {
+const triggerClickEvent = (element) => {
   myCursor.classList.add('active');
   handCursor.addEventListener(
     'animationend',
     (event) => {
-      sofaCircleGroups[1].dispatchEvent(new Event('click'));
+      element.dispatchEvent(new Event('click'));
     },
-    { signal: AbortSignal.timeout(500) }
+    { signal: AbortSignal.timeout(actionTiming) }
   );
+};
+
+motionPathOne.addEventListener('endEvent', (event) => {
+  triggerClickEvent(sofaCircleGroups[1]);
 });
 
 motionPathTwo.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      sofaCircleGroups[3].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
+  triggerClickEvent(sofaCircleGroups[3]);
 });
+
 motionPathThree.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      filterSolidBorders[0].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
+  triggerClickEvent(filterSolidBorders[0]);
 });
+
 motionPathFour.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      filterSolidBorders[4].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
+  triggerClickEvent(filterSolidBorders[4]);
 });
+
 motionPathFive.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
   tooltipCircles[2].dispatchEvent(new Event('mouseenter'));
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      tooltipCircles[2].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
+  triggerClickEvent(tooltipCircles[2]);
 });
 
 motionPathSix.addEventListener('beginEvent', (event) => {
@@ -201,15 +180,8 @@ motionPathSix.addEventListener('beginEvent', (event) => {
 });
 
 motionPathSix.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      tooltipCircles[0].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
   tooltipCircles[0].dispatchEvent(new Event('mouseenter'));
+  triggerClickEvent(tooltipCircles[0]);
 });
 
 motionPathSeven.addEventListener('beginEvent', (event) => {
@@ -217,47 +189,18 @@ motionPathSeven.addEventListener('beginEvent', (event) => {
 });
 
 motionPathSeven.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      circleSolidAndDualColors[2].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
+  triggerClickEvent(circleSolidAndDualColors[2]);
 });
 
 motionPathEight.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      circleSolidAndDualColors[4].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
+  triggerClickEvent(circleSolidAndDualColors[4]);
 });
 
 motionPathNine.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      console.log('animation change cursor end! Path-9');
-      circleShoeSolids[4].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
+  triggerClickEvent(circleShoeSolids[4]);
 });
 motionPathTen.addEventListener('endEvent', (event) => {
-  myCursor.classList.add('active');
-  handCursor.addEventListener(
-    'animationend',
-    (event) => {
-      circleShoeSolids[1].dispatchEvent(new Event('click'));
-    },
-    { signal: AbortSignal.timeout(500) }
-  );
+  triggerClickEvent(circleShoeSolids[1]);
 });
 
 // ============================= Change Cursor ======================
