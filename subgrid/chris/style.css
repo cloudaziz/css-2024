@@ -20,6 +20,7 @@ form ul {
 
 /* Easy way to use subgrid */
 #my-form {
+  margin-inline: 40px;
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-column-gap: 1em;
@@ -32,6 +33,17 @@ form ul {
   grid-column-gap: inherit;
   margin-bottom: inherit;
 }
-button {
+.button-area {
   grid-column: 2 / -1;
+  display: grid;
+  place-items: center;
+
+  button {
+    all: unset;
+    background-color: tomato;
+    padding: 8px 32px;
+    border-radius: 8px;
+    border: 2px solid red;
+    cursor: pointer;
+  }
 }
