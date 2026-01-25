@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Scroll Snap</title>
+</head>
+
+<body>
+   <header>
+      <h1>Demo of Scroll-Snapping</h1>
+      <nav>
+         <a href="#type">type</a>
+         <a href="#align">align</a>
+         <a href="#padding">padding</a>
+         <a href="#margin">margin</a>
+         <a href="#stop">stop</a>
+      </nav>
+   </header>
+
+   <section>
+      <article id="type">
+         <h2>Scroll Snap Type</h2>
+         <p>Apply to the <strong>scrolling container</strong></p>
+         <ul>
+            <li>
+               creates a scroll-snapping <strong>context</strong>
+            </li>
+            <li>
+               required <strong>axis</strong>: [
+               <code>x</code> |
+               <code>y</code> |
+               <code class="logical">block</code> |
+               <code class="logical">inline</code> |
+               <code>both</code>
+               ]
+            </li>
+            <li>
+               optional <strong>strictness</strong>:
+               [
+               <code>*proximity</code> |
+               <code>mandatory</code>
+               ]
+            </li>
+            <li>
+               Use on <code>html</code> for viewport scrolling
+            </li>
+         </ul>
+      </article>
+
+      <article id="align">
+         <h2>Scroll Snap Align</h2>
+         <p>Apply to any <strong>scrolled elements</strong></p>
+         <ul>
+            <li>
+               creates a scroll-snapping <strong>target</strong>
+            </li>
+            <li>
+               keywords: [
+               <code>none</code> |
+               <code>start</code> |
+               <code>end</code> |
+               <code>center</code>
+               ]{1,2}
+            </li>
+         </ul>
+      </article>
+
+      <article id="padding">
+         <h2>Scroll Padding</h2>
+         <p>Apply to the <strong>scrolling container</strong></p>
+         <ul>
+            <li>
+               narrows the available <strong>scroll-window</strong>
+            </li>
+            <li>
+               same syntax as <code>padding</code>
+            </li>
+            <li>
+               works for all scroll-to actions, not just snapping
+            </li>
+         </ul>
+      </article>
+
+      <article id="margin">
+         <h2>Scroll Margin</h2>
+         <p>Apply to any <strong>scrolled elements</strong></p>
+         <ul>
+            <li>
+               <strong>offset target</strong> from available scroll-window
+            </li>
+            <li>
+               same syntax as <code>margin</code>
+            </li>
+            <li>
+               works for all scroll-to actions, not just snapping
+            </li>
+         </ul>
+      </article>
+
+      <article id="stop">
+         <h2>Scroll Snap Stop</h2>
+         <p>Apply to any <strong>scrolled elements</strong></p>
+         <ul>
+            <li>
+               optionally <strong>stop inertial</strong> scrolling
+            </li>
+            <li>
+               keywords: [
+               <code class="stop">normal</code> |
+               <code class="stop">always</code>
+               ]
+            </li>
+            <li>
+               works for all scroll-to actions, not just snapping
+            </li>
+         </ul>
+      </article>
+
+      <article>
+         <h2>page 6</h2>
+      </article>
+
+      <article>
+         <h2>page 7</h2>
+      </article>
+
+      <article>
+         <h2>page 8</h2>
+      </article>
+
+      <article>
+         <h2>page 9</h2>
+      </article>
+
+      <article>
+         <h2>page 10</h2>
+      </article>
+
+      <article class="large">
+         <h2>page 11</h2>
+      </article>
+
+      <article>
+         <h2>page 12</h2>
+      </article>
+
+   </section>
+
+</body>
+
+</html>

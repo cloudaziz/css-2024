@@ -1,0 +1,130 @@
+html {
+  scroll-snap-type: block mandatory;
+  scroll-padding: 4.25em;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+article {
+  scroll-snap-align: start;
+  scroll-margin-top: 1em;
+}
+
+.large {
+  height: 200vh;
+}
+
+/* 
+html {
+  scroll-snap-type: both mandatory;
+}
+
+article {
+  scroll-snap-align: center;
+}
+
+section {
+  grid: auto-flow / repeat(3, 80vw);
+}
+ */
+@layer setup {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: snow;
+    font-family: sans-serif;
+    font-size: calc(1.2em + 0.25vw);
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    grid-template: auto minmax(0, 1fr) / 1fr;
+  }
+
+  @media not (prefers-reduced-motion: reduce) {
+    main {
+      scroll-behavior: smooth;
+    }
+  }
+
+  header {
+    background: lightgray;
+    scroll-snap-align: start;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: 1 / 1 / span 1 / -1;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+  }
+  section {
+    display: grid;
+    grid-auto-rows: minmax(50vh, max-content);
+    grid-gap: 1em;
+    padding: 1em;
+
+    overflow: auto;
+    grid: auto-flow / repeat(3, 80vw);
+  }
+  article {
+    background: white;
+    border: 2px solid gray;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding: 1em 2em;
+
+    scroll-snap-align: center;
+    /* min-height:; */
+  }
+
+  h1,
+  h2 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  ul {
+    margin: 0.5em 0;
+    padding: 0.25em 0;
+  }
+
+  ul ul {
+    padding-left: 1em;
+  }
+
+  li {
+    padding: 0.25em 0;
+  }
+
+  .bug {
+    background: pink;
+  }
+
+  code {
+    display: inline-block;
+    background: #eee;
+    padding: 0.125em 0.25em;
+  }
+}
