@@ -13,59 +13,37 @@ ul {
   background-color: rgb(29 149 149);
   padding: 30px;
   border-radius: 8px;
-}
-
-.comment {
-  background-color: rgb(73 186 186);
-  padding: 30px;
-  border-radius: 8px;
-  .comment-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    .avatar {
-      width: 30px;
-      height: 30px;
-      background-color: #000;
-      color: #fff;
-      border-radius: 100vh;
-
-      display: grid;
-      place-items: center;
-    }
-    .comment-author,
-    .comment-time {
-      margin: 0;
-    }
+  .comment {
+    background-color: rgb(73 186 186);
   }
-}
-.replies {
   .reply {
     background-color: rgb(73 186 186);
-    padding: 30px;
     margin-top: 10px;
-    border-radius: 8px;
-
-    .comment-head {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .avatar {
-        width: 30px;
-        height: 30px;
-        background-color: #000;
-        color: #fff;
-        border-radius: 100vh;
-
-        display: grid;
-        place-items: center;
-      }
-
-      .comment-author,
-      .comment-time {
-        margin: 0;
-      }
-    }
   }
+}
+
+.comment,
+.reply {
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 100vh;
+
+  display: grid;
+  place-items: center;
+}
+.comment-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comment-author,
+.comment-time {
+  margin: 0;
 }
