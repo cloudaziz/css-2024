@@ -21,13 +21,11 @@ ul {
     margin-top: 10px;
   }
 }
-
 .comment,
 .reply {
   padding: 30px;
   border-radius: 8px;
 }
-
 .avatar {
   width: 30px;
   height: 30px;
@@ -46,4 +44,26 @@ ul {
 .comment-author,
 .comment-time {
   margin: 0;
+}
+/* connector style start */
+.reply {
+  anchor-name: --reply;
+  anchor-scope: --reply; /* for every li connector */
+}
+.comment {
+  anchor-name: --comment;
+}
+.reply::after {
+  content: '';
+  border: 5px solid rgb(232, 232, 232);
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-radius: 0 0 0 8px;
+  /* background-color: yellow; */
+
+  position: absolute;
+  top: anchor(bottom --comment);
+  left: calc(anchor(left --comment) + 15px);
+  bottom: anchor(center --reply);
+  right: anchor(left --reply);
 }
