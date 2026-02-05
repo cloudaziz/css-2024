@@ -37,11 +37,11 @@ body {
   padding: 1rem 1.5rem;
   border: none;
   width: 100%;
-  outline-color: green;
+  outline-color: rgb(255, 143, 255);
   transition: background-color 0.4s ease-in-out;
 }
 
-.field_error {
+.field__error {
   width: max-content;
   margin: 0;
   position: absolute;
@@ -53,7 +53,7 @@ body {
   border-radius: 8px;
   padding: 1rem 1.5rem;
   transition: opacity 0.4s ease-in-out;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 form button {
@@ -81,4 +81,12 @@ form button {
 .field:has(:focus),
 .field:has(:placeholder-shown) {
   color: black;
+}
+
+.field:has(:invalid:not(:focus)) .field__error {
+  opacity: 1;
+}
+.field:has(:focus) .field__error,
+.field:has(:placeholder-shown:not(:focus)) .field__error {
+  opacity: 0;
 }
