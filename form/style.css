@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* width: 100vw; */
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.card {
+  width: 600px;
+  padding: 30px;
+  margin-inline: auto;
+  border: 1px solid rgb(255, 184, 184);
+  border-radius: 8px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+.field label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.field__container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.field input {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  border: none;
+  width: 100%;
+  outline-color: green;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.field_error {
+  width: max-content;
+  margin: 0;
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: tomato;
+  color: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  transition: opacity 0.4s ease-in-out;
+  /* opacity: 0; */
+}
+
+form button {
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  background-color: tomato;
+  color: #fff;
+  width: 100%;
+  outline-color: green;
+}
+
+.field:has(:invalid) {
+  color: tomato;
+}
