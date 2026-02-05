@@ -61,7 +61,7 @@ form button {
   font-weight: bold;
   border-radius: 8px;
   padding: 1rem 1.5rem;
-  background-color: tomato;
+  background-color: purple;
   color: #fff;
   width: 100%;
   outline-color: green;
@@ -69,4 +69,16 @@ form button {
 
 .field:has(:invalid) {
   color: tomato;
+}
+.field:has(:invalid) input {
+  background-color: rgb(252, 220, 215);
+}
+
+.field:has(:focus) input,
+.field:has(:placeholder-shown) input {
+  background-color: #f1f1f1;
+}
+.field:has(:focus),
+.field:has(:placeholder-shown) {
+  color: black;
 }
