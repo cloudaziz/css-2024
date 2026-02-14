@@ -1,6 +1,7 @@
 html {
   scroll-snap-type: block mandatory;
-  scroll-padding: 4.25em;
+  scroll-padding: 5.25em;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -10,7 +11,7 @@ header {
 
 article {
   scroll-snap-align: start;
-  scroll-margin-top: 1em;
+  /* scroll-margin-top: 1em; */
 }
 
 .large {
@@ -55,6 +56,13 @@ section {
     }
   }
 
+  section {
+    display: grid;
+    grid-auto-rows: minmax(50vh, max-content);
+    grid-gap: 1em;
+    padding: 1em;
+  }
+
   header {
     background: lightgray;
     scroll-snap-align: start;
@@ -75,15 +83,7 @@ section {
     display: inline-block;
     padding: 0.25em 0.5em;
   }
-  section {
-    display: grid;
-    grid-auto-rows: minmax(50vh, max-content);
-    grid-gap: 1em;
-    padding: 1em;
 
-    overflow: auto;
-    grid: auto-flow / repeat(3, 80vw);
-  }
   article {
     background: white;
     border: 2px solid gray;
@@ -91,9 +91,6 @@ section {
     align-content: center;
     justify-content: center;
     padding: 1em 2em;
-
-    scroll-snap-align: center;
-    /* min-height:; */
   }
 
   h1,
