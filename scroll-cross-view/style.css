@@ -1,0 +1,48 @@
+.content {
+  margin-inline: auto;
+  width: 60vw;
+}
+
+.feature-grid {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  max-inline-size: 100vw;
+  overflow: clip;
+
+  > .row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max(10vw, 15ch);
+    gap: 1rem;
+
+    /* @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) {
+        animation: pan-x linear both;
+        animation-timeline: view(block);
+      }
+    } */
+
+    animation: cross-row-animation-x linear both;
+    animation-timeline: view(block);
+
+    &:first-of-type {
+      animation-direction: reverse;
+    }
+
+    > .card {
+      aspect-ratio: 3/4;
+      background: green;
+      border-radius: 16px;
+    }
+  }
+}
+
+@keyframes cross-row-animation-x {
+  from {
+    transform: translateX(-15vw);
+  }
+  to {
+    transform: translateX(5vw);
+  }
+}
