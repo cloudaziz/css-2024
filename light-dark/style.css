@@ -1,0 +1,11 @@
+/* .panel {
+  background: if(
+    media(prefers-color-scheme: dark): #222;
+      style(--variant: highlight): yellow; else: white
+  );
+  color: if(media(prefers-color-scheme: dark): #FFF;);
+} */
+
+:root {
+  color-scheme: light dark;
+}
