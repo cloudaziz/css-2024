@@ -6,6 +6,12 @@
   color: if(media(prefers-color-scheme: dark): #FFF;);
 } */
 
-:root {
+/* :root {
+  --bg: light-dark(#fff, #000);
+  --fg: light-dark(#000, #fff);
   color-scheme: light dark;
-}
+} */
+/* body {
+  background-color: var(--bg);
+  color: var(--fg);
+} */
