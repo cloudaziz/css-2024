@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../moderncss/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="article">
+        <h1>Cascade Layers.</h1>
+        <p>
+          In this example, I'm showcasing the power of
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer"
+            >cascade layers</a
+          >, using <code>@layer</code>. This is a
+          <a href="#">link without class name</a>. You can see it appears green.
+          This is a
+          <a href="#" class="link"> link with class of <code>link</code></a
+          >. It, too, appears green, even though I specify the color of
+          <code>.link</code> elements to be blue. While <code>.link</code> has a
+          higher element-level specificity than <code>a</code>, I am setting a
+          color style on <code>a</code> in a higher-precedence
+          <code>@layer</code>.
+        </p>
+        <div class="callout">
+          <p>
+            The <em>layer</em> precedence beats the
+            <em>element specificity</em>.
+          </p>
+        </div>
+        <p>
+          Now, I have an even <em>more</em> specific layer called
+          <code>utilities</code> where I have a class called <code>pink</code>.
+          This is a
+          <a href="#" class="pink">link with class of <code>pink</code></a
+          >. This specificity wins.
+        </p>
+        <p>
+          Here's what the code looks like (editable). Try removing the
+          <code>typography</code> layer, or adjusting the order of the layers to
+          see what happens:
+        </p>
+
+        <div class="callout">
+          <p>
+            If you reverse the layer order at the top of the file (i.e. the
+            first time the name of the layer is introduced), you'll see a
+            different result.
+            <code>@layer utilities, typography, base;</code> will make the links
+            appear red and blue.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

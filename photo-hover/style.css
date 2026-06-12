@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, serif;
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+code {
+  background-color: gold;
+  padding: 0.25rem;
+}
+
+.article {
+  background-color: aliceblue;
+  padding: 3rem;
+}
+
+.callout {
+  padding-left: 2rem;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  border-left: 4px solid hotpink;
+}
+
+style {
+  display: block;
+  background: white;
+  border: 1px solid deepskyblue;
+  padding: 1rem 2rem;
+  line-height: 1.25;
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 1rem;
+}
+
+.content-hide {
+  display: none !important;
+}
