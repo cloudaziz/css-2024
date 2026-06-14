@@ -1,44 +1,16 @@
-/* Layer style code is editable in the body */
-@layer base {
-  body {
-    font-family: system-ui, serif;
-    font-size: 20px;
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto;
-    display: grid;
-    height: 100vh;
-    place-items: center;
-  }
-  a {
-    color: red;
-  }
-
-  code {
-    background-color: var(--yellow);
-    padding: 0.25rem;
-  }
-
-  .article {
-    background-color: aliceblue;
-    padding: 3rem;
-  }
-
-  .callout {
-    padding-left: 2rem;
-    margin-left: 2rem;
-    font-size: 1.5rem;
-    border-left: 4px solid var(--hotpink);
-  }
-  /* 
-  style {
-    display: block;
-    background: white;
-    border: 1px solid deepskyblue;
-    padding: 1rem 2rem;
-    line-height: 1.25;
-    font-family: monospace;
-    white-space: pre-wrap;
-    font-size: 1rem;
-  } */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--light);
+  color: contrast-color(var(--light));
+  max-width: 50dvw;
+  margin-inline: auto;
+}
+a {
+  color: var(--light);
+  text-decoration: none;
+}
+ul {
+  list-style: none;
 }

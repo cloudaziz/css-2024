@@ -1,13 +1,13 @@
-@layer theme {
-  :root {
-    color-scheme: light dark;
+:root {
+  color-scheme: light dark;
 
-    --black: #131416;
-    --white: #fff;
-    --yellow: #f6d653;
-    --hotpink: #ff69b4;
+  --black: #131416;
+  --white: #fff;
+  --yellow: #f6d653;
+  --hotpink: #ff69b4;
 
-    --dark: light-dark(var(--black), var(--white));
-    --light: light-dark(var(--white), var(--black));
-  }
+  --light: light-dark(var(--white), var(--black));
+  --navbg: light-dark(var(--black), var(--yellow));
+
+  --border-radius: 16px;
 }

@@ -7,52 +7,63 @@
     <title>Document</title>
   </head>
   <body>
+    <header>
+      <h1>Heading One</h1>
+      <nav>
+        <ul>
+          <li><a href="" class="home">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">Portfolio</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
-      <div class="article">
-        <h1>Cascade Layers.</h1>
+      <header>
+        <h2>Main Header Heading Two</h2>
+      </header>
+      <section>
+        <h2>Section Heading Two</h2>
         <p>
-          In this example, I'm showcasing the power of
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer"
-            >cascade layers</a
-          >, using <code>@layer</code>. This is a
-          <a href="#">link without class name</a>. You can see it appears green.
-          This is a
-          <a href="#" class="link"> link with class of <code>link</code></a
-          >. It, too, appears green, even though I specify the color of
-          <code>.link</code> elements to be blue. While <code>.link</code> has a
-          higher element-level specificity than <code>a</code>, I am setting a
-          color style on <code>a</code> in a higher-precedence
-          <code>@layer</code>.
-        </p>
-        <div class="callout">
-          <p>
-            The <em>layer</em> precedence beats the
-            <em>element specificity</em>.
-          </p>
-        </div>
-        <p>
-          Now, I have an even <em>more</em> specific layer called
-          <code>utilities</code> where I have a class called <code>pink</code>.
-          This is a
-          <a href="#" class="pink">link with class of <code>pink</code></a
-          >. This specificity wins.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur
+          aliquid quidem iste, ullam id aliquam sint nisi, vitae amet harum quas
+          facilis deserunt numquam distinctio molestiae sunt! Placeat facilis
+          dignissimos error consequatur repellendus necessitatibus unde commodi
+          possimus itaque neque. Nostrum odit sunt voluptates, voluptatibus
+          laborum aut ducimus id tempore exercitationem!
         </p>
         <p>
-          Here's what the code looks like (editable). Try removing the
-          <code>typography</code> layer, or adjusting the order of the layers to
-          see what happens:
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur
+          nulla exercitationem aliquam obcaecati tempore. Voluptate fugit
+          provident quos cumque eos eum dolores dolorum nam eius minus. Alias
+          magnam, error dolorum molestias tempora, fugit maiores recusandae quas
+          a exercitationem at adipisci sequi voluptatum dolores iure aliquid!
+          Repellendus totam vero libero voluptatem?
         </p>
-
-        <div class="callout">
-          <p>
-            If you reverse the layer order at the top of the file (i.e. the
-            first time the name of the layer is introduced), you'll see a
-            different result.
-            <code>@layer utilities, typography, base;</code> will make the links
-            appear red and blue.
-          </p>
-        </div>
-      </div>
+      </section>
+      <section>
+        <h3>Section Headin Three</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+          officia exercitationem excepturi perspiciatis inventore qui sed, iusto
+          enim facere corrupti, eveniet quod! Doloremque, aliquid. Molestiae nam
+          ipsam ipsum reiciendis odit.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+          soluta aliquid facere sit molestias! Neque eveniet laboriosam rerum,
+          tenetur nobis, velit a aliquam blanditiis, exercitationem perferendis
+          nam tempore sunt dolorem.
+        </p>
+      </section>
     </main>
+    <footer>
+      <p>
+        footer Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Repellendus id voluptate ipsam dicta minima perferendis, nesciunt a
+        necessitatibus aliquid impedit!
+      </p>
+    </footer>
   </body>
 </html>

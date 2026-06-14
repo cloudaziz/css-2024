@@ -1,6 +1,6 @@
 /* Layer architecture */
 /* Best practice to put @layer at top of the import file for organization */
-@layer base, theme, typography, utilities, tooltip, custom;
+@layer base, theme, typography, utilities, tooltip, nav, custom;
 
 /* Base */
 /* @import '../styles/base/normalize.css' layer(reset); */
@@ -18,8 +18,10 @@
 @import '../moderncss/css/base/utilities.css' layer(utilities);
 
 /* Layouts */
+@import '../moderncss/css/sections/header.css' layer(header); /* imports card */
 
 /* Components */
 @import '../moderncss/css/components/tooltip.css' layer(tooltip); /* imports card */
+@import '../moderncss/css/components/stackcard.css' layer(tooltip); /* imports card */
 
 @import '../moderncss/css/custom.css' layer(custom);

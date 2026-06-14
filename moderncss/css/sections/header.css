@@ -1,0 +1,16 @@
+header {
+  nav {
+    background-color: var(--navbg);
+    border-radius: var(--border-radius);
+    ul {
+      padding: 20px;
+      display: flex;
+      gap: 15px;
+      li {
+        a {
+          color: contrast-color(var(--navbg));
+        }
+      }
+    }
+  }
+}
