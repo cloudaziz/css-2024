@@ -1,9 +1,24 @@
 header {
+  background-color: var(--navbg);
+  border-radius: var(--border-radius);
+
+  margin-bottom: 20px;
+
+  /* position: relative; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    margin: 0;
+    /* text-align: center; */
+    background: var(--navbg);
+    color: contrast-color(var(--navbg));
+    /* font-size: 20px; */
+    line-height: 30px;
+  }
   nav {
-    background-color: var(--navbg);
-    border-radius: var(--border-radius);
     ul {
-      padding: 20px;
+      /* padding: 20px; */
       display: flex;
       gap: 15px;
       li {

@@ -5,9 +5,18 @@
   --white: #fff;
   --yellow: #f6d653;
   --hotpink: #ff69b4;
+  --hoverbg: #4f46e5;
+  --lime: lime;
+
+  --bg-gradient: repeating-linear-gradient(
+    -45deg,
+    var(--white) 0 10px,
+    var(--black) 10px 30px
+  );
 
   --light: light-dark(var(--white), var(--black));
   --navbg: light-dark(var(--black), var(--yellow));
+  --bg-theme-switch: light-dark(var(--yellow), var(--white));
 
   --border-radius: 16px;
 }

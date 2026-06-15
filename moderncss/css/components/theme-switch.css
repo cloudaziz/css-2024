@@ -1,0 +1,60 @@
+/* html {
+  &:has(#auto:checked) {
+    color-scheme: light dark;
+  }
+  &:has(#light:checked) {
+    color-scheme: light;
+  }
+  &:has(#dark:checked) {
+    color-scheme: dark;
+  }
+} */
+
+/* Light Mode */
+[data-theme='light'] {
+  color-scheme: light;
+}
+/* auto Mode */
+[data-theme='auto'] {
+  color-scheme: light dark;
+}
+/* Dark Mode - forcing this for the example, not advised to do this normally except you want to give your users the option to do so */
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+svg {
+  width: 20px;
+}
+.theme-switch {
+  display: flex;
+  gap: 10px;
+  background: var(--navbg);
+  color: contrast-color(var(--navbg));
+  padding: 4px;
+  border-radius: 999px;
+  margin-inline-end: 40px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.theme-switch label {
+  display: grid;
+  place-items: center;
+  /* padding: 10px 20px; */
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.3s;
+  /* font-size: 14px; */
+  /* font-weight: 600; */
+}
+
+.theme-switch input:checked + label {
+  svg {
+    fill: var(--hotpink);
+  }
+  /* background: var(--yellow); */
+  /* color: contrast-color(var(--yellow)); */
+}

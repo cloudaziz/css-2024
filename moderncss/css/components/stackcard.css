@@ -1,8 +1,4 @@
-header h1 {
-  text-align: center;
-}
-
-.stack-card {
+body.stack-card {
   max-width: 90dvw;
 }
 .hero-secton {
@@ -19,6 +15,10 @@ header h1 {
     margin: 0;
     font-size: 80px;
   }
+  p {
+    font-size: 18px;
+    /* margin-top: 36px; */
+  }
 }
 
 .stack {
@@ -31,11 +31,29 @@ header h1 {
     color: contrast-color(var(--navbg));
     border-radius: var(--border-radius);
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    gap: 20px;
+    /* grid-template-columns: repeat(2, 1fr); */
 
     /* animation: stack 1s linear both; */
+
+    &:nth-of-type(even) {
+      img {
+        order: 1;
+      }
+      .stack__content {
+        padding-inline-start: 30px;
+      }
+    }
   }
+  /* .stack__card:nth-of-type(odd) {
+    img {
+      order: 1;
+    }
+    .stack__content {
+      padding-inline-start: 20px;
+    }
+  } */
 
   .stack__content {
     display: flex;

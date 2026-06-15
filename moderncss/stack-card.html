@@ -7,8 +7,8 @@
     <title>Document</title>
   </head>
   <body class="stack-card">
+    <!-- data-theme="dark" -->
     <header>
-      <h1>Logo</h1>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
@@ -17,6 +17,60 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <h1 class="logo">Storepress</h1>
+      <div class="theme-switch">
+        <input
+          type="radio"
+          name="theme"
+          id="light"
+          data-set-theme="light"
+          checked
+        />
+        <label for="light">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"
+            ></path>
+          </svg>
+        </label>
+
+        <input type="radio" name="theme" id="dark" data-set-theme="dark" />
+        <label for="dark"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </label>
+
+        <input type="radio" name="theme" id="auto" data-set-theme="auto" />
+        <label for="auto"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.75a.75.75 0 0 0 .75.75 2.25 2.25 0 0 1 2.25 2.25.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75 2.25 2.25 0 0 1 2.25-2.25.75.75 0 0 0 .75-.75V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v9a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </label>
+      </div>
     </header>
     <main>
       <section class="hero-secton">
@@ -29,10 +83,7 @@
 
       <section class="stack">
         <article class="stack__card">
-          <img
-            src="https://storepress.com/wp-content/uploads/2025/10/image-hotspots-slider.svg"
-            alt=""
-          />
+          <img src="./images/image.png" alt="" />
           <div class="stack__content">
             <h3>Image Hotspot Slider</h3>
             <p>
@@ -44,11 +95,9 @@
             <p><a href="#">Learn More...</a></p>
           </div>
         </article>
+
         <article class="stack__card">
-          <img
-            src="https://storepress.com/wp-content/uploads/2025/10/image-hotspots-slider.svg"
-            alt=""
-          />
+          <img loading="lazy" src="./images/image.png" alt="" />
           <div class="stack__content">
             <h3>Image Hotspot Slider</h3>
             <p>
@@ -60,11 +109,9 @@
             <p><a href="#">Learn More...</a></p>
           </div>
         </article>
+
         <article class="stack__card">
-          <img
-            src="https://storepress.com/wp-content/uploads/2025/10/image-hotspots-slider.svg"
-            alt=""
-          />
+          <img loading="lazy" src="./images/image.png" alt="" />
           <div class="stack__content">
             <h3>Image Hotspot Slider</h3>
             <p>
@@ -76,11 +123,9 @@
             <p><a href="#">Learn More...</a></p>
           </div>
         </article>
+
         <article class="stack__card">
-          <img
-            src="https://storepress.com/wp-content/uploads/2025/10/image-hotspots-slider.svg"
-            alt=""
-          />
+          <img src="./images/image.png" alt="" />
           <div class="stack__content">
             <h3>Image Hotspot Slider</h3>
             <p>
@@ -93,6 +138,7 @@
           </div>
         </article>
       </section>
+
       <section>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto
@@ -209,7 +255,122 @@
           perspiciatis, architecto nam saepe magnam nostrum voluptatibus tempora
           cupiditate! Quod, ab?
         </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed delectus
+          sapiente quos necessitatibus, pariatur ratione fuga voluptatem rem
+          esse cum! Dolores, dolorum natus minus accusantium culpa ea, veniam
+          perspiciatis veritatis, praesentium cumque neque dicta id quisquam!
+          Velit quae, veniam suscipit necessitatibus quidem vero voluptates
+          pariatur animi voluptatibus a, est consectetur unde ratione placeat
+          corrupti tempore! Magni laborum magnam voluptates necessitatibus
+          placeat esse id natus, obcaecati sed praesentium fugiat cumque alias,
+          tenetur officia iusto corrupti autem sunt omnis dignissimos ipsa
+          aperiam quas ducimus iste vitae! Aliquid eos ullam accusamus sapiente
+          ad veritatis aut rerum nihil eveniet blanditiis voluptatum porro
+          veniam obcaecati necessitatibus fugit in explicabo, est non molestiae
+          qui reprehenderit! Sunt unde ipsa quis, quam architecto deserunt a
+          quod molestias hic aliquam! Officia minima, veniam quae voluptas quod
+          nesciunt corrupti, velit laboriosam facere recusandae nihil aspernatur
+          alias distinctio consequuntur obcaecati quidem neque itaque explicabo
+          natus dolor quia cupiditate ad, provident nobis. Atque autem corporis
+          exercitationem voluptatibus, iste fuga inventore quis veritatis cumque
+          error, molestias architecto modi doloribus deleniti nemo et, ut velit
+          quos quia voluptatum repudiandae. Excepturi, quidem. Sequi suscipit
+          saepe voluptatem laboriosam rem, placeat adipisci amet beatae
+          molestias explicabo molestiae ducimus vero, minus facere reprehenderit
+          odit dicta autem ratione, non labore accusamus. Quasi vitae illum
+          culpa consequatur aspernatur cumque officia sint! Quam iure minima
+          veritatis voluptates cumque illo vero, a, iusto praesentium similique
+          veniam asperiores dicta quia accusamus quis reiciendis alias vel.
+          Beatae commodi fuga alias. Eos excepturi eaque quis modi possimus.
+          Rerum sed tempora nulla, sapiente numquam voluptatem aliquid quibusdam
+          quidem, nisi neque qui adipisci porro ab eum nobis mollitia vero
+          accusantium praesentium est dolor deleniti quas. Illum consectetur
+          numquam doloremque odio eius quod maiores ipsa iure hic itaque cum
+          labore corporis mollitia, animi ea quos! Facere, et suscipit officia
+          quisquam possimus magni delectus sunt debitis vero, harum ipsam ad
+          quae amet totam aliquam repellendus cupiditate optio id maiores. Ex
+          nemo suscipit vel. Rerum, vel eligendi! Labore, nobis! In aut quae
+          porro dicta eligendi unde amet dolores consequuntur ab quia labore
+          quasi id voluptatem atque animi nesciunt, officia doloribus nostrum
+          qui perferendis sed aspernatur ratione iusto? Ipsa, nemo
+          exercitationem quo fuga quos odit tenetur illo, quibusdam blanditiis
+          ipsum fugiat corporis adipisci natus molestias magni expedita!
+          Aspernatur corrupti quisquam, saepe, quod provident, quo accusantium
+          veritatis odio laboriosam exercitationem molestiae dolorum nesciunt
+          cupiditate doloribus quidem suscipit. Blanditiis animi perferendis
+          laborum praesentium, facilis quasi labore quos itaque possimus
+          reprehenderit, harum velit fuga mollitia ullam commodi similique vel!
+          Molestiae nostrum at doloremque recusandae dolor. Cum optio,
+          exercitationem recusandae culpa nobis nostrum distinctio tempore,
+          ipsum dolore natus incidunt esse et possimus fugit porro explicabo
+          enim quibusdam obcaecati illum aut minima iusto. Facere enim tempora
+          soluta. Ipsa, veniam dicta repudiandae pariatur velit at repellat?
+          Expedita iusto nostrum minima modi quidem ea tempora voluptates
+          voluptate, fuga quia nemo porro reiciendis dolor quisquam beatae quas
+          eius sapiente consectetur amet officiis! Deleniti mollitia ipsa, natus
+          repellat laudantium iusto cum facere voluptatum soluta assumenda unde
+          quasi tempora sequi voluptates ducimus sunt ex aperiam aut. Veritatis
+          harum reprehenderit ex provident earum eligendi dolor. Tempora non aut
+          illum a ipsam officiis libero unde repellat officia. Aliquam
+          repudiandae error, quae ad nobis officiis quo delectus maiores animi
+          vel omnis nostrum ea sint modi inventore officia maxime adipisci
+          accusantium. Atque odit nulla, magni officiis porro, recusandae
+          pariatur aliquid rem incidunt quae eius, consequatur inventore
+          possimus! Eligendi, libero neque accusamus in vero maiores corrupti
+          magnam laboriosam sunt id nesciunt! Fuga ut voluptatem facilis,
+          magnam, quod fugit, rerum nostrum delectus totam ea at sed quidem
+          deleniti sit culpa voluptates quam! Temporibus, aperiam qui dolor
+          tempore unde, aspernatur molestias fugiat facilis iure recusandae
+          minima mollitia ut libero quam possimus esse porro deserunt earum non
+          accusamus reiciendis. Hic, sint libero. Cumque, voluptas minus
+          consectetur, eveniet autem quidem dicta adipisci accusamus architecto,
+          repellat officiis. Et odio ut sequi velit ipsam, excepturi beatae
+          repellendus in blanditiis recusandae obcaecati non omnis esse qui
+          doloribus accusamus possimus. Veritatis veniam labore dolor laudantium
+          suscipit amet ratione illo, excepturi totam odit asperiores optio
+          dolorum incidunt iure mollitia libero laborum sit reiciendis dolorem
+          molestiae aliquam debitis dolores numquam rerum? Deleniti, sit fuga
+          tempore vero accusamus neque velit quis, facilis reprehenderit
+          veritatis esse eum? In ipsum laudantium rerum soluta beatae. Quae vero
+          in deleniti deserunt vitae ex quibusdam necessitatibus labore odit quo
+          ducimus veritatis sed provident quam, nihil unde cupiditate suscipit?
+          Consequuntur quo, eos mollitia cumque numquam dolores voluptates fugit
+          doloribus alias, temporibus officiis magnam corrupti tenetur
+          consectetur? Corporis ratione itaque sapiente recusandae dolorum ipsa
+          cum quisquam est? Quisquam nisi maxime similique suscipit, quas
+          necessitatibus aliquid accusamus nostrum officiis nulla omnis id
+          reiciendis quae corrupti sequi repellendus voluptates amet, odit atque
+          iste non corporis obcaecati cum? Harum doloribus similique sequi
+          temporibus molestiae, quae velit voluptas itaque eos consequatur ut.
+          Velit nulla eius consequatur et maxime eveniet adipisci molestiae a
+          fugiat quia numquam cum alias repudiandae vitae laudantium deserunt,
+          nesciunt cupiditate incidunt voluptates. Accusantium beatae vel magni
+          ipsa neque aut ea nobis sed, non, sint reiciendis ut nostrum. Ducimus
+          beatae illo iusto, rerum fugit voluptates dicta, aut, accusantium
+          commodi quia repellat magni quae? Deserunt fugiat illo quod eveniet,
+          quia eaque repellat voluptate, dicta optio sunt rem, harum
+          reprehenderit architecto amet aut explicabo eius? Error, quidem
+          expedita ab consectetur, reiciendis aspernatur perspiciatis nesciunt
+          id totam nemo pariatur vitae quasi! Placeat ut eum corrupti suscipit
+          eius porro, nisi sunt nam velit temporibus magnam ullam quos
+          asperiores numquam. Aspernatur natus, cumque vitae eveniet itaque modi
+          fugiat tenetur accusamus dolorum similique nam perferendis, maxime
+          nobis rerum ad sequi incidunt inventore obcaecati! Optio enim sed
+          nostrum quos quam explicabo. Optio cum rem cupiditate, ea nulla illo
+          hic soluta aliquam fuga quidem impedit! Dolorum, excepturi voluptatem
+          eveniet deleniti quaerat vitae! Aliquam fugit est laudantium vel nemo
+          ratione dicta itaque asperiores pariatur quia voluptate consequuntur
+          error quod animi minus eius saepe ut laborum, magni vero repellat,
+          iure dolor expedita. Nesciunt consequatur, optio et quas unde minus
+          porro hic asperiores officiis praesentium incidunt iusto eaque nemo
+          numquam reprehenderit? Aperiam libero dolorum quasi enim? Deserunt
+          minima doloremque ipsa a voluptate id repudiandae culpa architecto
+          nisi.
+        </p>
       </section>
     </main>
+    <footer><p>This is Footer</p></footer>
+    <script src="./js/light-dark.js"></script>
   </body>
 </html>
