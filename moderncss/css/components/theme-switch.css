@@ -55,6 +55,8 @@ svg {
   svg {
     fill: var(--hotpink);
   }
-  /* background: var(--yellow); */
-  /* color: contrast-color(var(--yellow)); */
 }
+
+/* 
+Source: https://css-tricks.com/almanac/functions/l/light-dark/
+*/

@@ -19,6 +19,7 @@
 
 /* Layouts */
 @import '../moderncss/css/sections/header.css' layer(header); /* imports card */
+@import '../moderncss/css/sections/hero.css' layer(hero); /* imports card */
 
 /* Components */
 @import '../moderncss/css/components/tooltip.css' layer(tooltip); /* imports card */

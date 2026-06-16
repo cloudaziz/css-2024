@@ -1,0 +1,36 @@
+.hero {
+  margin-bottom: 20px;
+}
+.hero__grid {
+  transition: 500ms;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* aspect-ratio: 9/6; */
+  gap: 20px;
+  /* background: crimson; */
+}
+
+:where(.left, .center, .right) {
+  padding: 40px;
+  border-radius: var(--border-radius);
+  background: navajowhite;
+  transition: 300ms;
+}
+
+:where(.left, .center, .right):hover {
+  border-radius: var(--border-radius);
+  /* background: crimson; */
+  background: var(--navbg);
+  color: contrast-color(var(--navbg));
+}
+
+.hero__grid:has(.left:hover) {
+  grid-template-columns: 2fr 0.5fr 0.5fr;
+}
+
+.hero__grid:has(.center:hover) {
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+}
+.hero__grid:has(.right:hover) {
+  grid-template-columns: 0.5fr 0.5fr 2fr;
+}
