@@ -11,9 +11,11 @@
 }
 
 :where(.left, .center, .right) {
+  height: 460px;
   padding: 40px;
   border-radius: var(--border-radius);
-  background: navajowhite;
+  background: var(--navbg);
+  color: contrast-color(var(--navbg));
   transition: 300ms;
 }
 
@@ -22,6 +24,7 @@
   /* background: crimson; */
   background: var(--navbg);
   color: contrast-color(var(--navbg));
+  overflow: hidden;
 }
 
 .hero__grid:has(.left:hover) {
