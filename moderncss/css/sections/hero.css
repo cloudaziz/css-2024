@@ -29,11 +29,29 @@
 
 .hero__grid:has(.left:hover) {
   grid-template-columns: 2fr 0.5fr 0.5fr;
+
+  .left {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    align-items: center;
+  }
 }
 
 .hero__grid:has(.center:hover) {
   grid-template-columns: 0.5fr 2fr 0.5fr;
+
+  .center {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    align-items: center;
+  }
 }
 .hero__grid:has(.right:hover) {
   grid-template-columns: 0.5fr 0.5fr 2fr;
+
+  .right {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    align-items: center;
+  }
 }
