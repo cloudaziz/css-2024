@@ -27,7 +27,7 @@
   overflow: hidden;
 }
 
-.hero__grid:has(.left:hover) {
+/* .hero__grid:has(.left:hover) {
   grid-template-columns: 2fr 0.5fr 0.5fr;
 
   .left {
@@ -54,4 +54,4 @@
     grid-template-columns: 0.5fr 2fr;
     align-items: center;
   }
-}
+} */

@@ -23,7 +23,8 @@
 
 /* Components */
 @import '../moderncss/css/components/tooltip.css' layer(tooltip); /* imports card */
-@import '../moderncss/css/components/stackcard.css' layer(tooltip); /* imports card */
-@import '../moderncss/css/components/theme-switch.css' layer(tooltip); /* imports card */
+@import '../moderncss/css/components/stackcard.css' layer(stackcard); /* imports card */
+@import '../moderncss/css/components/theme-switch.css' layer(theme-switch); /* imports card */
+@import '../moderncss/css/components/popover-menu.css' layer(popover); /* imports card */
 
 @import '../moderncss/css/custom.css' layer(custom);
