@@ -16,6 +16,7 @@
 
   --light: light-dark(var(--white), var(--black));
   --navbg: light-dark(var(--black), var(--yellow));
+  --logo: light-dark(var(--hotpink), var(--black));
   --bg-theme-switch: light-dark(var(--yellow), var(--white));
 
   --border-radius: 16px;

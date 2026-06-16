@@ -1,0 +1,128 @@
+body.popover-hover {
+  height: 200dvh;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+  gap: 1rem;
+  padding-block-end: 80dvh;
+}
+
+.card {
+  display: grid;
+  place-items: center;
+
+  aspect-ratio: 9/16;
+  border-radius: 14px;
+  background-color: var(--navbg);
+  /* background-image:
+    radial-gradient(at 90% 67%, hsla(205, 60%, 75%, 1) 0px, transparent 50%),
+    radial-gradient(at 8% 41%, hsla(337, 65%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 87%, hsla(305, 72%, 69%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 39%, hsla(189, 77%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 38% 48%, hsla(351, 80%, 71%, 1) 0px, transparent 50%),
+    radial-gradient(at 64% 33%, hsla(183, 97%, 68%, 1) 0px, transparent 50%),
+    radial-gradient(at 68% 28%, hsla(168, 61%, 74%, 1) 0px, transparent 50%); */
+
+  position: relative;
+  container: card / size;
+}
+
+.menu-toggle {
+  position: absolute;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 6px;
+  backdrop-filter: blur(2px);
+  border: 1px solid oklch(100% 0 0 / 0.33);
+  background: oklch(100% 0 0 / 0.25);
+  /* padding: 0;
+    background: oklch(100% 0 0 / 0.25);
+    
+    backdrop-filter: blur(2px);
+    padding: 0px 5px 2px 5px;
+    border: 1px solid oklch(100% 0 0 / 0.33); */
+
+  &:hover,
+  &:focus {
+    background: var(--hotpink);
+  }
+}
+
+menu {
+  width: 200px;
+  position-area: block-start span-inline-start;
+  position-try:
+    flip-block,
+    flip-inline,
+    flip-block flip-inline;
+
+  /* position-try-fallbacks: --flip-block, --flip-inline, --flip-both; */
+
+  margin: 0;
+  background: none;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #111, #444);
+  overflow: clip;
+  opacity: 0;
+  display: none;
+  translate: 10px 0;
+  transition-property: translate, opacity, display, overlay;
+  transition-duration: 0.45s;
+  transition-behavior: allow-discrete;
+
+  &:popover-open {
+    opacity: 1;
+    display: block;
+    translate: 0 0;
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 -20px;
+    }
+  }
+
+  > li {
+    border-bottom: 5px solid transparent;
+
+    > button {
+      background: transparent;
+      color: white;
+      text-align: left;
+      width: 100%;
+      border: 0;
+      border-radius: 4px;
+      padding: 0.2rem 1rem;
+      font-size: 0.8rem;
+
+      &:focus,
+      &:hover {
+        background: lch(100% 0 0 / 0.1);
+      }
+    }
+  }
+}
+
+.screenreader-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* @position-try --flip-block {
+  position-area: block-end span-inline-start;
+}
+
+@position-try --flip-inline {
+  position-area: block-start span-inline-end;
+}
+
+@position-try --flip-both {
+  position-area: block-end span-inline-end;
+} */

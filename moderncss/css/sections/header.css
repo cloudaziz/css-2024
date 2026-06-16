@@ -11,8 +11,8 @@ header.header {
   .logo {
     margin: 0;
     /* text-align: center; */
-    background: var(--navbg);
-    color: contrast-color(var(--navbg));
+    /* background: var(--hotpink); */
+    color: var(--logo);
     /* font-size: 20px; */
     line-height: 30px;
   }

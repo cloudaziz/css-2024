@@ -20,11 +20,12 @@
 /* Layouts */
 @import '../moderncss/css/sections/header.css' layer(header); /* imports card */
 @import '../moderncss/css/sections/hero.css' layer(hero); /* imports card */
+@import '../moderncss/css/sections/stackcard.css' layer(stackcard); /* imports card */
 
 /* Components */
 @import '../moderncss/css/components/tooltip.css' layer(tooltip); /* imports card */
-@import '../moderncss/css/components/stackcard.css' layer(stackcard); /* imports card */
-@import '../moderncss/css/components/theme-switch.css' layer(theme-switch); /* imports card */
-@import '../moderncss/css/components/popover-menu.css' layer(popover); /* imports card */
+
+@import '../moderncss/css/components/theme-switch.css' layer(themeSwitch);
+@import '../moderncss/css/components/popover-hover-menu.css' layer(HoverMenu); /* imports card */
 
 @import '../moderncss/css/custom.css' layer(custom);
