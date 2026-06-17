@@ -1,0 +1,57 @@
+@layer demo {
+  @position-try --bottom {
+    top: anchor(bottom);
+  }
+  main {
+    height: 200dvh;
+    margin: 200px;
+  }
+  .anchor {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    /* border-radius: 100vw; */
+    anchor-name: --my-anchor;
+  }
+  .boat {
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    background-color: rgb(207, 24, 24);
+    position-anchor: --my-anchor;
+
+    /* 01 system */
+    /* position-area: top center;  */
+
+    /* 02 system */
+    /* position-area: block-start center; */
+
+    /* 03 system */
+    /* bottom: anchor(top);
+    left: calc(anchor(center) - 25px); */
+
+    /* 04 system */
+    /* inset-inline-start: calc(anchor(center) - 25px);
+    inset-block-end: anchor(top); */
+
+    /* 04 system */
+    /* right: calc(anchor(left));
+    align-self: anchor-center; */
+
+    top: anchor(bottom);
+    bottom: anchor(top);
+  }
+}
+
+/* 
+Resource: 
+https://webkit.org/blog/17240/a-gentle-introduction-to-anchor-positioning/ 
+https://developer.chrome.com/blog/anchor-positioning-api
+https://web.dev/learn/css/anchor-positioning
+
+https://css-tip.com/position-area/
+
+https://css-tricks.com/css-anchor-positioning-guide/
+
+Tool: https://chrome.dev/anchor-tool/
+*/
