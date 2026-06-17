@@ -1,0 +1,80 @@
+section.pop-menu {
+  /* padding: 48px; */
+  display: grid;
+  place-items: center;
+}
+#anchor {
+  all: unset;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: red;
+  }
+}
+[popover] {
+  background: var(--navbg);
+  flex-direction: column;
+  position-anchor: auto;
+  position-area: top span-right;
+  padding: 0;
+  margin: 0;
+  border: 1px solid red;
+  border-radius: 4px;
+  transition-timing-function: ease;
+  transition-property: opacity, overlay, transform;
+  transition-duration: 300ms;
+  transition-behavior: allow-discrete;
+  position-try-fallbacks: flip-block, flip-inline;
+
+  ~ [popover] {
+    position-area: right span-bottom;
+    position-try-fallbacks: flip-block, flip-inline;
+  }
+
+  &:popover-open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+  }
+
+  &:has(+ [popover]:popover-open) > button[popovertarget] {
+    background: oklch(0 0 0 / 0.15);
+    background: red;
+  }
+
+  button {
+    background: oklch(0 0 0 / 0.05);
+    background: green;
+    position: relative;
+    border-radius: 0;
+    border: 0;
+    padding: 8px;
+    min-width: 100px;
+    text-align: left;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    &:hover {
+      /* background-color: oklch(0 0 0 / 0.15); */
+      background-color: red;
+    }
+
+    &[popovertarget]::after {
+      content: '▶';
+      display: inline-block;
+      margin-left: auto;
+      font-size: 0.8em;
+      vertical-align: middle;
+      color: #484848;
+    }
+  }
+}

@@ -46,7 +46,7 @@ body.popover-hover {
 
   &:hover,
   &:focus {
-    background: var(--hotpink);
+    background-color: var(--hotpink);
   }
 }
 

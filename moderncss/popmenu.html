@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="pop-menu">
+      <button id="anchor" popovertarget="menu-1">Anchor Menu ▾</button>
+      <menu id="menu-1" popover>
+        <button>menu item</button>
+        <button>menu item</button>
+        <button popovertarget="menu-2">menu item</button>
+        <button>menu item</button>
+      </menu>
+      <menu id="menu-2" popover>
+        <button>menu item</button>
+        <button popovertarget="menu-3">menu item</button>
+        <button>menu item</button>
+      </menu>
+      <menu id="menu-3" popover>
+        <button>menu item</button>
+        <button>menu item</button>
+        <button>menu item</button>
+      </menu>
+    </section>
+  </body>
+</html>
