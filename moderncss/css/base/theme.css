@@ -7,6 +7,7 @@
   --hotpink: #ff69b4;
   --hoverbg: #4f46e5;
   --lime: lime;
+  --crimson: crimson;
 
   --bg-gradient: repeating-linear-gradient(
     -45deg,
@@ -18,6 +19,7 @@
   --navbg: light-dark(var(--black), var(--yellow));
   --logo: light-dark(var(--hotpink), var(--black));
   --bg-theme-switch: light-dark(var(--yellow), var(--white));
+  --bg-hero: light-dark(var(--yellow), var(--hotpink));
 
   --border-radius: 16px;
 }

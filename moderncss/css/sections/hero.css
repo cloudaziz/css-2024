@@ -14,18 +14,16 @@
   height: 460px;
   padding: 40px;
   border-radius: var(--border-radius);
-  background: var(--navbg);
-  color: contrast-color(var(--navbg));
+  background: var(--bg-hero);
+  color: contrast-color(var(--bg-hero));
   transition: 300ms;
 }
 
-:where(.left, .center, .right):hover {
+/* :where(.left, .center, .right):hover {
   border-radius: var(--border-radius);
-  /* background: crimson; */
-  background: var(--navbg);
-  color: contrast-color(var(--navbg));
-  overflow: hidden;
-}
+  background: var(--logo);
+  color: contrast-color(var(--logo));
+} */
 
 /* .hero__grid:has(.left:hover) {
   grid-template-columns: 2fr 0.5fr 0.5fr;
