@@ -42,6 +42,29 @@
     bottom: anchor(top);
   }
 }
+/* Misc styling */
+
+.tooltip {
+  /* margin-top: 20rem; */
+  inset: auto;
+  position-area: top;
+  position-try-fallbacks: flip-block flip-inline;
+
+  width: 300px;
+}
+
+/* etc */
+
+body {
+  width: 200dvw;
+  height: 200dvh;
+  display: grid;
+  place-items: center;
+  /* position: relative; */
+  font-family: system-ui, serif;
+  line-height: 1.4;
+  background: #222;
+}
 
 /* 
 Resource: 
@@ -54,4 +77,6 @@ https://css-tip.com/position-area/
 https://css-tricks.com/css-anchor-positioning-guide/
 
 Tool: https://chrome.dev/anchor-tool/
+
+Demo: https://codepen.io/collection/ExkRWw
 */
