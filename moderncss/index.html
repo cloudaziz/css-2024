@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../moderncss/style.css" />
-    <title>Document</title>
+    <title>Modern CSS</title>
   </head>
-  <body class="stack-card">
+  <body>
     <!-- data-theme="dark" -->
     <header class="header">
       <nav>
@@ -16,28 +16,23 @@
           <li><a href="#">Services</a></li>
           <li><a href="#">Contact</a></li>
           <li>
-            <div class="popover-hover-menu">
-              <button
-                class="menu-toggle"
-                command="toggle-popover"
-                commandfor="card-menu-1"
-                interestfor="card-menu-1"
-                style="anchor-name: --card-1"
-              >
-                <span class="screenreader-only">Open Menu!</span>
-                <span class="aria-hidden">Hover me</span>
-              </button>
-
-              <menu
-                popover="hint"
-                id="card-menu-1"
-                style="position-anchor: --card-1"
-              >
-                <li><button>This</button></li>
-                <li><button>Little</button></li>
-                <li><button>Piggy</button></li>
-                <li><button>Went</button></li>
-                <li><button>to Market!</button></li>
+            <div class="pop-menu">
+              <button id="anchor" popovertarget="menu-1">Anchor Menu ▾</button>
+              <menu id="menu-1" popover>
+                <button>menu item</button>
+                <button>menu item</button>
+                <button popovertarget="menu-2">menu item</button>
+                <button>menu item</button>
+              </menu>
+              <menu id="menu-2" popover>
+                <button>menu item</button>
+                <button popovertarget="menu-3">menu item</button>
+                <button>menu item</button>
+              </menu>
+              <menu id="menu-3" popover>
+                <button>menu item</button>
+                <button>menu item</button>
+                <button>menu item</button>
               </menu>
             </div>
           </li>
@@ -90,46 +85,84 @@
             ></path>
           </svg>
         </label>
+
+        <div class="popover-hover-menu">
+          <button
+            class="menu-toggle"
+            command="toggle-popover"
+            commandfor="card-menu-1"
+            interestfor="card-menu-1"
+            style="anchor-name: --card-1"
+          >
+            <span class="screenreader-only">Open Menu!</span>
+            <span class="aria-hidden">...</span>
+          </button>
+
+          <menu
+            popover="hint"
+            id="card-menu-1"
+            style="position-anchor: --card-1"
+          >
+            <li><button>This</button></li>
+            <li><button>Little</button></li>
+            <li><button>Piggy</button></li>
+            <li><button>Went</button></li>
+            <li><button>to Market!</button></li>
+          </menu>
+        </div>
       </div>
     </header>
     <main>
-      <section class="hero">
-        <div class="hero__grid">
-          <div class="left">
-            <h2>Left Heading Three</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At eos
-              inventore exercitationem sequi adipisci, accusamus, officiis velit
-              magnam necessitatibus provident deserunt tempora iste!
-              Reprehenderit fuga eum veniam iure id modi porro, enim officia,
-              aliquam assumenda dolorum totam perferendis ea. Labore cupiditate
-              itaque quas placeat earum, consectetur quisquam alias? Doloribus
-              facilis ipsam dolore ullam voluptate.
-            </p>
+      <section class="card-layout">
+        <div class="card">
+          <img src="https://assets.codepen.io/6291/fluffy.png" alt="" />
+          <div class="card__content">
+            <h3>Single Product</h3>
+            <p>12.50</p>
+            <button>Add to cart</button>
           </div>
-          <div class="center">
-            <h2>Left Heading Three</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At eos
-              inventore exercitationem sequi adipisci, accusamus, officiis velit
-              magnam necessitatibus provident deserunt tempora iste!
-              Reprehenderit fuga eum veniam iure id modi porro, enim officia,
-              aliquam assumenda dolorum totam perferendis ea. Labore cupiditate
-              itaque quas placeat earum, consectetur quisquam alias? Doloribus
-              facilis ipsam dolore ullam voluptate.
-            </p>
+        </div>
+        <div class="card">
+          <ul class="slider">
+            <li class="slider__item">
+              <img src="https://assets.codepen.io/6291/spike.png" alt="" />
+            </li>
+            <li class="slider__item">
+              <img src="https://assets.codepen.io/6291/zorp.png" alt="" />
+            </li>
+            <li class="slider__item">
+              <img src="https://assets.codepen.io/6291/spike.png" alt="" />
+            </li>
+            <li class="slider__item">
+              <img src="https://assets.codepen.io/6291/spike.png" alt="" />
+            </li>
+            <li class="slider__item">
+              <img src="https://assets.codepen.io/6291/zorp.png" alt="" />
+            </li>
+            <li class="slider__item">
+              <img src="https://assets.codepen.io/6291/fluffy.png" alt="" />
+            </li>
+          </ul>
+          <div class="card__content">
+            <h3>Variable Product</h3>
+            <p>12.50</p>
+            <button>Add to cart</button>
           </div>
-          <div class="right">
-            <h2>Left Heading Three</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At eos
-              inventore exercitationem sequi adipisci, accusamus, officiis velit
-              magnam necessitatibus provident deserunt tempora iste!
-              Reprehenderit fuga eum veniam iure id modi porro, enim officia,
-              aliquam assumenda dolorum totam perferendis ea. Labore cupiditate
-              itaque quas placeat earum, consectetur quisquam alias? Doloribus
-              facilis ipsam dolore ullam voluptate.
-            </p>
+        </div>
+        <div class="card">
+          <img src="https://assets.codepen.io/6291/zorp.png" alt="" />
+          <div class="card__content">
+            <h3>Single Product</h3>
+            <p>12.50</p>
+            <button>Add to cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://assets.codepen.io/6291/bloop.png" alt="" />
+          <div class="card__content">
+            <h3>Single Product</h3>
+            <p>12.50</p>
+            <button>Add to cart</button>
           </div>
         </div>
       </section>
@@ -164,20 +197,6 @@
         </article>
 
         <article class="stack__card">
-          <img loading="lazy" src="./images/image.png" alt="" />
-          <div class="stack__content">
-            <h3>Image Hotspot Slider</h3>
-            <p>
-              The image hotspot slider enhances user experience by adding
-              interactive hotspots to images, allowing users to click and
-              explore product details, videos, or reviews, while enjoying a
-              smooth, dynamic browsing experience.
-            </p>
-            <p><a href="#">Learn More...</a></p>
-          </div>
-        </article>
-
-        <article class="stack__card">
           <img src="./images/image.png" alt="" />
           <div class="stack__content">
             <h3>Image Hotspot Slider</h3>
@@ -192,7 +211,7 @@
         </article>
       </section>
 
-      <section class="popover-menu"></section>
+      <!-- <section class="popover-menu"></section> -->
 
       <section class="content">
         <p>

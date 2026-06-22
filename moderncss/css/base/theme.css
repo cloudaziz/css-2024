@@ -1,13 +1,26 @@
 :root {
   color-scheme: light dark;
 
-  --black: #131416;
+  --black: #0e0e11;
   --white: #fff;
   --yellow: #f6d653;
   --hotpink: #ff69b4;
   --hoverbg: #4f46e5;
   --lime: lime;
   --crimson: crimson;
+
+  --bg: #0e0e11;
+  --surface: #18181d;
+  --surface-2: #222228;
+  --border: #2e2e38;
+  --text: #f0eff5;
+  --muted: #6b6a7a;
+  --accent: #a78bfa;
+  --accent-dim: #2d2248;
+  --tag-bg: #a78bfa;
+  --tag-text: #0e0e11;
+  --toggle-bg: #a78bfa;
+  --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
 
   --bg-gradient: repeating-linear-gradient(
     -45deg,
@@ -17,7 +30,7 @@
 
   --light: light-dark(var(--white), var(--black));
   --navbg: light-dark(var(--black), var(--yellow));
-  --logo: light-dark(var(--hotpink), var(--black));
+  --logo: light-dark(var(--accent), var(--black));
   --bg-theme-switch: light-dark(var(--yellow), var(--white));
   --bg-hero: light-dark(var(--yellow), var(--hotpink));
 

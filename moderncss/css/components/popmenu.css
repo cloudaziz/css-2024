@@ -5,7 +5,8 @@ section.pop-menu {
 }
 #anchor {
   all: unset;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  color: var(--light);
 
   &:hover,
   &:focus {

@@ -25,7 +25,8 @@
 /* Components */
 @import '../moderncss/css/components/tooltip.css' layer(tooltip); /* imports card */
 @import '../moderncss/css/components/theme-switch.css' layer(themeSwitch);
+@import '../moderncss/css/components/popmenu.css' layer(popmenu);
 @import '../moderncss/css/components/pophover.css' layer(pophover); /* imports card */
-@import '../moderncss/css/components/popmenu.css' layer(pophover); /* imports card */
+/* @import '../moderncss/css/components/slider.css' layer(slider); */
 
 @import '../moderncss/css/custom.css' layer(custom);

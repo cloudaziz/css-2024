@@ -33,7 +33,6 @@ svg {
   color: contrast-color(var(--navbg));
   padding: 4px;
   border-radius: 999px;
-  margin-inline-end: 40px;
 }
 
 .theme-switch input {

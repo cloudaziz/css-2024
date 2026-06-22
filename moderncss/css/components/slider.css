@@ -5,7 +5,7 @@ body {
   background: #000;
 }
 
-ul {
+ul.slider {
   width: 400px;
   aspect-ratio: 4 / 3;
   max-width: calc(100vw - 2rem);
@@ -20,14 +20,14 @@ ul {
   scrollbar-color: #0000 #0000;
 }
 
-li::scroll-marker {
+li.slider__item::scroll-marker {
   content: ' ';
   background: hsl(0 0% 50%);
   height: 0.6em;
   width: 0.6em;
   border-radius: 100px;
 }
-ul::scroll-marker-group {
+ul.slider::scroll-marker-group {
   gap: 0.4em;
   aspect-ratio: 3.75 / 1;
   display: inline-flex;
@@ -38,7 +38,7 @@ ul::scroll-marker-group {
   translate: -50% 1rem;
   justify-content: center;
 }
-li::scroll-marker {
+li.slider__item::scroll-marker {
   transition-property: background;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
@@ -48,10 +48,10 @@ li::scroll-marker {
 /* if you want it to toggle otherwise */
 /* ::scroll-marker:target-current {
   flex: 2;
-  background: white;
+  background: red;
 } */
 
-li::scroll-marker {
+li.slider__item::scroll-marker {
   animation: grow both linear;
   animation-range: cover;
   animation-timeline: --item;
@@ -67,8 +67,8 @@ li::scroll-marker {
     background: #fff;
   }
 }
-ul::scroll-button(right),
-ul::scroll-button(left) {
+ul.slider::scroll-button(right),
+ul.slider::scroll-button(left) {
   content: '';
   position: absolute;
   top: 50%;
@@ -84,29 +84,29 @@ ul::scroll-button(left) {
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
-ul::scroll-button(*):focus-visible {
+ul.slider::scroll-button(*):focus-visible {
   outline-color: #fff;
   outline-offset: 2px;
 }
-ul::scroll-button(*):hover {
+ul.slider::scroll-button(*):hover {
   background-color: hsl(0 0% 100% / 0.75);
 }
-ul::scroll-button(*):disabled {
+ul.slider::scroll-button(*):disabled {
   opacity: 0.35;
 }
-ul::scroll-button(left) {
+ul.slider::scroll-button(left) {
   rotate: 180deg;
   right: calc(100% + 0.5rem);
 }
 
-ul::scroll-button(right) {
+ul.slider::scroll-button(right) {
   left: calc(100% + 0.5rem);
 }
 section {
   position: relative;
 }
 
-li {
+li.slider__item {
   height: 100%;
   width: 400px;
   aspect-ratio: 4 / 3;
@@ -114,7 +114,7 @@ li {
   scroll-snap-align: center;
 }
 
-li:nth-of-type(3) {
+li.slider__item:nth-of-type(3) {
   scroll-initial-target: nearest;
 }
 
@@ -126,15 +126,16 @@ img {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  li {
+  li.slider__item {
     view-timeline: --item inline;
-  }
-  img {
-    opacity: 0;
-    animation: scale both ease-in-out;
-    mix-blend-mode: plus-lighter;
-    animation-timeline: --item;
-    animation-range: cover;
+
+    img {
+      opacity: 0;
+      animation: scale both ease-in-out;
+      mix-blend-mode: plus-lighter;
+      animation-timeline: --item;
+      animation-range: cover;
+    }
   }
 }
 

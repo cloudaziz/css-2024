@@ -1,11 +1,7 @@
-body.stack-card {
-  max-width: 90dvw;
-}
-
 .stack {
   .stack__card {
     position: sticky;
-    top: calc(sibling-index() * 40px);
+    top: calc(sibling-index() * 60px);
 
     background: var(--navbg);
     color: contrast-color(var(--navbg));
