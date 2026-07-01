@@ -23,12 +23,12 @@ img {
 .container {
   max-width: 1000px;
   margin: auto;
-  border: 1px solid green;
+  border: 8px solid green;
 }
 
 .slider-wrapper::-webkit-scrollbar {
-  height: 5px;
-  /* scrollbar-width: none; */
+  /* height: 5px; */
+  scrollbar-width: none;
 }
 .slider-wrapper::-webkit-scrollbar-thumb {
   background: black;
@@ -71,4 +71,42 @@ img {
       }
     }
   }
+}
+
+/* ==========================
+   PREV / NEXT BUTTON
+========================== */
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 22px;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.nav:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
 }
