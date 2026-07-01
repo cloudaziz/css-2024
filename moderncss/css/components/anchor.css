@@ -39,7 +39,7 @@
     align-self: anchor-center; */
 
     top: anchor(bottom);
-    bottom: anchor(top);
+    /* bottom: anchor(top); */
   }
 }
 /* Misc styling */
