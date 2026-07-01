@@ -42,7 +42,7 @@ img {
 ========================== */
 
 .slider {
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
 
   .slider-wrapper {
     overflow: auto;
@@ -139,62 +139,69 @@ img {
 
 .thumbnail-container {
   overflow: hidden;
-  width: 100%;
-  border: 1px solid red;
+  /* width: 100%; */
+  /* border: 1px solid red; */
+
+  max-width: 550px;
+
+  position: absolute;
+  position-anchor: --nav-anchor;
+  right: anchor(right);
+  justify-self: anchor-center;
+  /* align-self: anchor-center; */
 
   .thumbnail-track {
     display: flex;
     gap: 10px;
     transition: transform 0.35s ease;
-    width: max-content;
+    /* width: max-content; */
+
     position: relative;
-  }
 
-  .thumb-indicator {
-    position: absolute;
-    top: 0;
-    left: 0;
+    .thumb-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
 
-    width: 210px;
-    height: 100%;
+      width: 100px;
+      height: 100%;
 
-    border: 3px solid #0d6efd;
-    border-radius: 10px;
+      border: 3px solid #0d6efd;
+      border-radius: 10px;
 
-    pointer-events: none;
+      pointer-events: none;
 
-    transition:
-      transform 0.35s ease,
-      width 0.35s ease;
-  }
-  .thumb {
-    flex: 0 0 210px;
-    width: 210px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 3px solid transparent;
-    cursor: pointer;
-    transition: 0.3s;
-    opacity: 0.6;
-
-    & img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      transition:
+        transform 0.35s ease,
+        width 0.35s ease;
     }
 
-    &:hover {
-      opacity: 1;
-      /* transform: translateY(-4px); */
-    }
+    .thumb {
+      flex: 0 0 100px;
+      width: 100px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 3px solid transparent;
+      cursor: pointer;
+      transition: 0.3s;
+      opacity: 0.6;
 
-    &.active {
-      opacity: 1;
-      border-color: #0d6efd;
-      box-shadow: 0 5px 18px rgba(13, 110, 253, 0.25);
+      & img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+      }
+
+      &:hover {
+        opacity: 1;
+        /* transform: translateY(-4px); */
+      }
+
+      &.active {
+        opacity: 1;
+        border-color: #0d6efd;
+        box-shadow: 0 5px 18px rgba(13, 110, 253, 0.25);
+      }
     }
   }
 }
-/*  */
-
-/*  */
