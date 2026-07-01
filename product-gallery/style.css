@@ -23,7 +23,7 @@ img {
 .container {
   max-width: 1000px;
   margin: auto;
-  border: 8px solid green;
+  /* border: 8px solid green; */
 }
 
 .slider-wrapper::-webkit-scrollbar {
@@ -42,7 +42,7 @@ img {
 ========================== */
 
 .slider {
-  position: relative;
+  anchor-name: --nav-anchor;
 
   .slider-wrapper {
     overflow: auto;
@@ -52,12 +52,10 @@ img {
     border-radius: 16px;
     background: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    /* border: 4px solid black; */
 
     .slides {
       display: flex;
       transition: transform 0.4s ease;
-      /* border: 4px solid red; */
 
       .slide {
         scroll-snap-align: center;
@@ -76,37 +74,33 @@ img {
 /* ==========================
    PREV / NEXT BUTTON
 ========================== */
-
 .nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 50px;
   height: 50px;
   border: none;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  font-size: 22px;
-  z-index: 10;
+
+  position: absolute;
+  position-anchor: --nav-anchor;
+  align-self: anchor-center;
+
   transition: 0.3s;
-}
 
-.nav:hover {
-  transform: translateY(-50%) scale(1.08);
-}
+  &.next {
+    right: calc(anchor(right) + 25px);
+  }
 
-.nav:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.prev {
-  left: 15px;
-}
-
-.next {
-  right: 15px;
+  &.prev {
+    left: calc(anchor(left) + 25px);
+  }
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
