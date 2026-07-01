@@ -22,30 +22,21 @@ img {
 
 .container {
   max-width: 1100px;
-  margin: auto;
-  /* border: 8px solid green; */
+  margin-inline: auto;
 }
 
-.slider-wrapper::-webkit-scrollbar {
-  /* height: 5px; */
-  scrollbar-width: none;
-}
-.slider-wrapper::-webkit-scrollbar-thumb {
-  background: black;
-  border-radius: 10px;
-}
-.slider-wrapper::-webkit-scrollbar-track {
-  background: transparent;
-}
 /* ==========================
    MAIN SLIDER
 ========================== */
 
 .slider {
   /* border: 2px solid gray; */
+  max-width: 100%;
+
+  isolation: isolate;
 
   .slider-wrapper {
-    overflow: auto;
+    overflow: hidden;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     anchor-name: --nav-anchor;
@@ -85,6 +76,8 @@ img {
   position: absolute;
   position-anchor: --nav-anchor;
   align-self: anchor-center;
+
+  z-index: 1;
 
   transition: 0.3s;
 
@@ -139,69 +132,59 @@ img {
 
 .thumbnail-container {
   overflow: hidden;
-  /* width: 100%; */
-  /* border: 1px solid red; */
-
-  max-width: 550px;
-
-  position: absolute;
-  position-anchor: --nav-anchor;
-  right: anchor(right);
-  justify-self: anchor-center;
-  /* align-self: anchor-center; */
-
-  .thumbnail-track {
-    display: flex;
-    gap: 10px;
-    transition: transform 0.35s ease;
-    /* width: max-content; */
-
-    position: relative;
-
-    .thumb-indicator {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 100px;
-      height: 100%;
-
-      border: 3px solid #0d6efd;
-      border-radius: 10px;
-
-      pointer-events: none;
-
-      transition:
-        transform 0.35s ease,
-        width 0.35s ease;
-    }
-
-    .thumb {
-      flex: 0 0 100px;
-      width: 100px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 3px solid transparent;
-      cursor: pointer;
-      transition: 0.3s;
-      opacity: 0.6;
-
-      & img {
-        width: 100%;
-        aspect-ratio: 4/3;
-        object-fit: cover;
-      }
-
-      &:hover {
-        opacity: 1;
-        /* transform: translateY(-4px); */
-      }
-
-      &.active {
-        opacity: 1;
-        border-color: #0d6efd;
-        box-shadow: 0 5px 18px rgba(13, 110, 253, 0.25);
-      }
-    }
-  }
+  width: 100%;
 }
+/*  */
+.thumbnail-track {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.35s ease;
+  width: max-content;
+  position: relative;
+}
+.thumb-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 210px;
+  height: 100%;
+
+  border: 3px solid #0d6efd;
+  border-radius: 10px;
+
+  pointer-events: none;
+
+  transition:
+    transform 0.35s ease,
+    width 0.35s ease;
+}
+/*  */
+
+.thumb {
+  flex: 0 0 210px;
+  width: 210px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0.6;
+}
+
+.thumb img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.thumb:hover {
+  opacity: 1;
+  /* transform: translateY(-4px); */
+}
+
+/* .thumb.active {
+  opacity: 1;
+  border-color: #0d6efd;
+  box-shadow: 0 5px 18px rgba(13, 110, 253, 0.25);
+} */
