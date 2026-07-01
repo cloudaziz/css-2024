@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  container-type: scroll-state;
+}
 body {
   background-color: var(--light);
   color: contrast-color(var(--light));

@@ -12,6 +12,24 @@
   text-align: center;
   background-color: light-dark(white, #3d3d3d);
   flex: 1;
+  anchor-scope: --anchor-el;
+
+  .card-content {
+    anchor-name: --anchor-el;
+  }
+  .badge {
+    background-color: var(--hoverbg);
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    /*  Anchor reference  */
+    position-anchor: --anchor-el;
+    /*  Position bottom of anchored elem at top center of anchor  */
+    /* position-area: top right; */
+    top: calc(anchor(top) + 8px);
+    right: calc(anchor(right) + 8px);
+  }
+
   img {
     max-width: 100%;
     height: auto;

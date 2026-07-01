@@ -1,0 +1,39 @@
+/* Resource: https://developer.chrome.com/blog/carousels-with-css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.card-container {
+  padding: 20px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: if(media(orientation: landscape): row; else: column);
+  gap: 20px;
+
+  .card {
+    border: 1px dotted green;
+
+    anchor-scope: --anchor-el;
+
+    .card-item {
+      background-color: tomato;
+      padding: 1rem;
+
+      border: 1px dotted green;
+      anchor-name: --anchor-el;
+    }
+    .badge {
+      width: fit-content;
+      padding: 8px;
+      background-color: #4f46e5;
+      position: absolute;
+      /*  Anchor reference  */
+      position-anchor: --anchor-el;
+      /*  Position bottom of anchored elem at top center of anchor  */
+      /* position-area: top right; */
+      top: calc(anchor(top));
+      right: calc(anchor(right));
+    }
+  }
+}

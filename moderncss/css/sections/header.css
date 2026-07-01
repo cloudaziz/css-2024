@@ -1,6 +1,3 @@
-html {
-  container-type: scroll-state;
-}
 header.header {
   background-color: var(--navbg);
   border-radius: var(--border-radius);
