@@ -1,192 +1,283 @@
-/* ==========================
-   RESET
-========================== */
+/* ============================================================
+		   CONTRACT
+		   The ONLY thing any controller (JS, Interactivity API, another
+		   element) ever writes is a CSS variable on .wrapper:
+			   --index     current slide (integer)  ← source of truth
+			   --drag      live finger delta in px   (transient)
+			   --duration  transition time           (0ms during drag)
+		   No transform / scrollLeft / transition is ever set directly.
+		   Everything visual is DERIVED from --index in CSS below.
+		   ============================================================ */
+
+:root {
+  color-scheme: light dark;
+}
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f4f4;
-  padding: 40px 20px;
+  margin: 0;
+  padding: 2rem 1rem;
+  font:
+    15px/1.5 system-ui,
+    -apple-system,
+    sans-serif;
+  background: #faf9f7;
+  color: #1d1d1b;
+  display: flex;
+  justify-content: center;
 }
 
-img {
-  display: block;
+.demo {
   width: 100%;
-  object-fit: cover;
+  max-width: 540px;
+}
+
+/* ---------- the slider ---------- */
+.wrapper {
+  /* knobs — override per instance via inline style or a class */
+  --total: 5;
+  --per-view: 1;
+  --gap: 0px;
+
+  /* state — written by the controller */
+  --index: 0;
+  --drag: 0px;
+  --duration: 450ms;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
 }
 
 .container {
-  max-width: 1100px;
-  margin-inline: auto;
+  overflow: hidden;
+  touch-action: pan-y;
+  /* finger can still scroll the page vertically */
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* ==========================
-   MAIN SLIDER
-========================== */
+.track {
+  display: flex;
+  gap: var(--gap);
+  user-select: none;
+  -webkit-user-select: none;
+  will-change: transform;
+  backface-visibility: hidden;
 
-.slider {
-  /* border: 2px solid gray; */
-  max-width: 100%;
-
-  isolation: isolate;
-
-  .slider-wrapper {
-    overflow: hidden;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    anchor-name: --nav-anchor;
-
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-    .slides {
-      display: flex;
-      transition: transform 0.4s ease;
-
-      .slide {
-        scroll-snap-align: center;
-        min-width: 100%;
-        user-select: none;
-
-        & img {
-          width: 100%;
-          aspect-ratio: 16/9;
-        }
-      }
-    }
-  }
+  /* THE position. Derived entirely from --index (+ live --drag). */
+  transform: translate3d(
+    calc(
+      var(--index) * (100% + var(--gap)) / var(--per-view) * -1 + var(--drag)
+    ),
+    0,
+    0
+  );
+  transition: transform var(--duration) var(--ease);
 }
 
-/* ==========================
-   PREV / NEXT BUTTON
-========================== */
-.nav {
-  width: 50px;
-  height: 50px;
+.item {
+  flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+  min-width: 0;
+  backface-visibility: hidden;
+  -webkit-user-drag: none;
+}
+
+.item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* ---------- prev / next (just buttons that nudge --index) ---------- */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
   border: none;
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: #1d1d1b;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.arrow:hover {
   background: #fff;
-
-  position: absolute;
-  position-anchor: --nav-anchor;
-  align-self: anchor-center;
-
-  z-index: 1;
-
-  transition: 0.3s;
-
-  &.next {
-    right: calc(anchor(right) + 25px);
-  }
-
-  &.prev {
-    left: calc(anchor(left) + 25px);
-  }
-  &:hover {
-    background-color: #000;
-    color: #fff;
-  }
-  &:disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
 }
 
-/* ==========================
-   DOTS
-========================== */
+.arrow[data-go='prev'] {
+  left: 10px;
+}
 
+.arrow[data-go='next'] {
+  right: 10px;
+}
+
+/* ---------- dot pagination (sliding pill DERIVED from --index) ---------- */
 .dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0 30px;
-
-  .dot {
-    width: 12px;
-    height: 12px;
-    border: none;
-    border-radius: 50%;
-    background: #c7c7c7;
-    cursor: pointer;
-    transition: 0.3s;
-
-    &.active {
-      background: #000;
-      transform: scale(1.3);
-      /* animation: elasticDot 0.5s ease; */
-    }
-  }
-}
-
-/* ==========================
-   THUMBNAILS
-========================== */
-
-.thumbnail-container {
-  --item-width: 210px;
-  border: 1px solid red;
-  overflow: hidden;
-  width: 100%;
-}
-/*  */
-.thumbnail-track {
-  display: flex;
-  gap: 10px;
-  transition: transform 0.35s ease;
-  width: max-content;
+  --dot: 8px;
+  --dot-gap: 10px;
   position: relative;
+  display: flex;
+  gap: var(--dot-gap);
+  justify-content: center;
+  padding: 14px 0 4px;
+  margin: 0 auto;
+  width: max-content;
 }
-.thumb-indicator {
+
+.dots button {
+  width: var(--dot);
+  height: var(--dot);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #c9c6bf;
+}
+
+.dots .indicator {
+  /* one moving element, positioned by --index */
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  background: #d8613a;
+  pointer-events: none;
+  transform: translateX(calc(var(--index) * (var(--dot) + var(--dot-gap))));
+  transition: transform var(--duration) var(--ease);
+}
+
+/* ---------- thumbnails: paginated strip, all DERIVED from --index ---------- */
+.thumbs-viewport {
+  --thumb-w: 64px;
+  --thumb-gap: 8px;
+  --thumb-per: 5;
+  /* how many thumbs are visible at once */
+  overflow: hidden;
+  margin: 12px auto 0;
+  /* width is clamped to exactly --thumb-per thumbnails (+ the gaps between them) */
+  width: calc(
+    var(--thumb-per) * var(--thumb-w) + (var(--thumb-per) - 1) *
+      var(--thumb-gap)
+  );
+}
+
+.thumbs-strip {
+  position: relative;
+  display: flex;
+  gap: var(--thumb-gap);
+  width: max-content;
+  /* --thumb-offset (integer thumb units) is maintained by the controller and
+			   only changes when the active thumb hits the edge of the window — so clicking
+			   interior thumbs (2nd, 3rd, 4th) never scrolls the strip. */
+  transform: translateX(
+    calc(var(--thumb-offset, 0) * (var(--thumb-w) + var(--thumb-gap)) * -1)
+  );
+  transition: transform var(--duration) var(--ease);
+}
+
+.thumbs-strip button {
+  flex: 0 0 var(--thumb-w);
+  width: var(--thumb-w);
+  height: 44px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0.55;
+  transition: opacity var(--duration);
+}
+
+.thumbs-strip button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbs-strip .frame {
+  /* positioned in the FULL strip's coords — composes with the strip's own translate */
   position: absolute;
   top: 0;
   left: 0;
-
-  width: var(--item-width);
-  height: 100%;
-
-  border: 3px solid #0d6efd;
-  border-radius: 10px;
-
+  width: var(--thumb-w);
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid #d8613a;
   pointer-events: none;
-
-  transition:
-    transform 0.35s ease,
-    width 0.35s ease;
+  box-sizing: border-box;
+  transform: translateX(
+    calc(var(--index) * (var(--thumb-w) + var(--thumb-gap)))
+  );
+  transition: transform var(--duration) var(--ease);
 }
-/*  */
 
-.thumb {
-  flex: 0 0 var(--item-width);
-  /* width: 210px; */
-  border-radius: 10px;
-  overflow: hidden;
-  border: 3px solid transparent;
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    --duration: 0ms;
+  }
+}
+
+/* ---------- demo chrome (not part of the component) ---------- */
+.panel {
+  margin-top: 24px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+
+.panel h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.row button {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
-  opacity: 0.6;
+  font-size: 13px;
 }
 
-.thumb img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
+.readout {
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  background: #f4f1ea;
+  padding: 3px 8px;
+  border-radius: 6px;
 }
 
-.thumb:hover {
-  opacity: 1;
-  /* transform: translateY(-4px); */
+.row butoon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-/* .thumb.active {
-  opacity: 1;
-  border-color: #0d6efd;
-  box-shadow: 0 5px 18px rgba(13, 110, 253, 0.25);
-} */
