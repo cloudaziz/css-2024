@@ -59,6 +59,8 @@ body {
   touch-action: pan-y;
   /* finger can still scroll the page vertically */
   -webkit-tap-highlight-color: transparent;
+
+  anchor-name: --anchor-el;
 }
 
 .track {
@@ -98,8 +100,11 @@ body {
 /* ---------- prev / next (just buttons that nudge --index) ---------- */
 .arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position-anchor: --anchor-el;
+  top: anchor(top);
+  align-self: anchor-center;
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
   width: 40px;
   height: 40px;
   border: none;
