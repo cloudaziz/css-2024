@@ -131,6 +131,8 @@ img {
 ========================== */
 
 .thumbnail-container {
+  --item-width: 210px;
+  border: 1px solid red;
   overflow: hidden;
   width: 100%;
 }
@@ -147,7 +149,7 @@ img {
   top: 0;
   left: 0;
 
-  width: 210px;
+  width: var(--item-width);
   height: 100%;
 
   border: 3px solid #0d6efd;
@@ -162,8 +164,8 @@ img {
 /*  */
 
 .thumb {
-  flex: 0 0 210px;
-  width: 210px;
+  flex: 0 0 var(--item-width);
+  /* width: 210px; */
   border-radius: 10px;
   overflow: hidden;
   border: 3px solid transparent;
