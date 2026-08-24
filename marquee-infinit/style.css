@@ -18,15 +18,15 @@
   width: 100%;
   margin: 20px auto;
   white-space: nowrap;
+
   overflow: hidden;
-  padding: 20px 0;
-  background-color: rgb(0, 0, 0);
+
   position: relative;
-  isolation: isolate;
 }
 .logos::after {
   content: '';
   position: absolute;
+
   top: 0;
   left: 0;
   --_blur-size: 150px;
@@ -83,4 +83,62 @@
 .logos-slide img {
   width: 150px;
   margin: 0 20px;
+  scroll-snap-align: start;
+}
+
+/* .logos-slide {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+} */
+
+/* scroll-snap-align: start; */
+
+/* New Marquee Start */
+
+.container {
+  /* Size of the text elements */
+  --s: 200px;
+  /* Animation duration */
+  --d: 25s;
+  /* Number of visible elements */
+  --n: 6;
+
+  display: flex;
+  overflow: hidden;
+  /* Creates a fade effect at the edges */
+  /* mask: linear-gradient(90deg, #0000, #000 5% 95%, #0000); */
+  mask: linear-gradient(90deg, #0000, #000 10% 90%, #0000);
+}
+.container:hover div {
+  animation-play-state: paused;
+}
+.container div {
+  width: var(--s);
+  flex-shrink: 0;
+  padding: 1rem 0;
+  text-align: center;
+  /* Defines the animation path */
+  offset: shape(
+    from calc(var(--s) / -2) 50%,
+    hline by calc(sibling-count() * max(100% / var(--n), var(--s) + 1rem))
+  );
+  /* Sets up the animation */
+  animation: marquee var(--d) linear infinite
+    calc(-1 * sibling-index() * var(--d) / sibling-count());
+}
+
+@keyframes marquee {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container div {
+    animation: none;
+    offset: auto;
+  }
 }
